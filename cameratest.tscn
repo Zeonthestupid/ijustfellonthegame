@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b66e23ei7xtsu"]
+
+[ext_resource type="PackedScene" uid="uid://c2e7tyojwuj00" path="res://testenemy.tscn" id="1_qtw75"]
+[ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="2_b4t3d"]
+[ext_resource type="Script" uid="uid://buimng5gmvd4h" path="res://enemy1.gd" id="2_lrp77"]
+
+[node name="Node2D" type="Node2D" unique_id=1323774156]
+
+[node name="RigidBody2D" parent="." unique_id=1912453553 instance=ExtResource("1_qtw75")]
+script = ExtResource("2_lrp77")
+
+[node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("2_b4t3d")]
+position = Vector2(100, -3)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=103309783]
+position = Vector2(169, 6)
+zoom = Vector2(1.69, 1.69)

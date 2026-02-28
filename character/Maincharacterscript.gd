@@ -11,6 +11,10 @@ extends CharacterBody2D
 @export var clamping_speed = 0.5 
 @export var swim_back = 0.02
 
+@export_subgroup("characterconf")
+@export var heath = 10.0
+
+
 var shotangle = 0.0
 var shot = false
 
@@ -31,6 +35,7 @@ func swim(delta, velo) -> Vector2:
 		velo.x = move_toward(velocity.x, 0.25, max_speed)
 		velo.y = move_toward(velocity.y, 0.25, max_speed)
 	return velo
+
 func _physics_process(delta):
 	var velo = Vector2(0,0)
 	velo = swim(delta, velo)

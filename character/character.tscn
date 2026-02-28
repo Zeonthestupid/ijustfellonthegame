@@ -22,9 +22,13 @@ size = Vector2(42, 90)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=286528908]
 script = ExtResource("1_glpr6")
+speed_mod = null
 swimming_amp = 2.4
+max_speed = null
+clamping_speed = null
+swim_back = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1441652066]
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1441652066]
 shape = SubResource("RectangleShape2D_pjt0s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=879365669]
