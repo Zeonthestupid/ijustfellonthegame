@@ -1,6 +1,5 @@
 extends Node2D
 
-const BULLET = preload("res://harpoonbullet.tscn")
 
 signal harpoon_shot(rotation)
 # Called when the node enters the scene tree for the first time.
@@ -28,16 +27,16 @@ func _process(delta: float)-> void:
 	
 	
 	if Input.is_action_just_released("weapon_primary"):
-		shoot(charge)
+		pass
 	print(charge)
 	
 	
 	
 	
-func shoot(charge):
-	var bullet_instance = BULLET.instantiate()
-	bullet_instance.setup(charge)
-	get_tree().root.add_child(bullet_instance)
-	bullet_instance.global_position = muzzle.global_position
-	bullet_instance.rotation = rotation
-	emit_signal("harpoon_shot", rotation_degrees)
+#func shoot(charge):
+	#var bullet_instance = BULLET.instantiate()
+	#bullet_instance.setup(charge)
+	#get_tree().root.add_child(bullet_instance)
+	#bullet_instance.global_position = muzzle.global_position
+	#bullet_instance.rotation = rotation
+	#emit_signal("harpoon_shot", rotation_degrees)

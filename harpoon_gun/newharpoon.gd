@@ -1,6 +1,6 @@
 extends Node2D
 
-const BULLET = preload("res://harpoon_gun/harpoonbullet.gd")
+const BULLET = preload("res://harpoon_gun/harpoonbullet.tscn")
 
 signal harpoon_shot(rotation)
 # Called when the node enters the scene tree for the first time.
