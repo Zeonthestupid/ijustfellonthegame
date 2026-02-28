@@ -26,7 +26,6 @@ func _process(delta: float)-> void:
 		shoot(1)
 	
 	
-	
 func shoot(charge):
 	var bullet_instance = BULLET.instantiate()
 	get_tree().root.add_child(bullet_instance)
