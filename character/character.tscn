@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://d2s8xu4rhnvdr" path="res://assets/gordan 10.png" id="10_6610h"]
 [ext_resource type="Texture2D" uid="uid://cn20yipu2ngry" path="res://assets/gordan 9.png" id="11_0shic"]
 [ext_resource type="Script" uid="uid://cgtpbbry1886i" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
+[ext_resource type="Script" uid="uid://dkpsq3l4nwfwa" path="res://grappling hook/pivot.gd" id="13_hq3og"]
+[ext_resource type="Texture2D" uid="uid://46d5p7u1yo2o" path="res://assets/rope.png" id="14_hq3og"]
+[ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://grappling hook/sprite_2d.gd" id="15_orckd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
 size = Vector2(42, 82.5)
@@ -95,7 +98,7 @@ position = Vector2(0.031, 0.646)
 sprite_frames = SubResource("SpriteFrames_mbhnd")
 animation = &"swim"
 autoplay = "idle"
-frame_progress = 0.10732474
+frame_progress = 0.7656351
 script = ExtResource("12_8brn5")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=156739510]
@@ -103,3 +106,22 @@ position = Vector2(0, 0.99999845)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_wfnr8")
 debug_color = Color(0.7480362, 0.4134945, 0.54839736, 0.41960785)
+
+[node name="pivot" type="Node2D" parent="." unique_id=2112945148]
+position = Vector2(1.0000191, -7.999997)
+script = ExtResource("13_hq3og")
+
+[node name="Sprite2D" type="Sprite2D" parent="pivot" unique_id=399634108]
+texture_repeat = 2
+position = Vector2(0, -2)
+rotation = -1.5707964
+texture = ExtResource("14_hq3og")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 0)
+script = ExtResource("15_orckd")
+
+[node name="RayCast2D" type="RayCast2D" parent="pivot/Sprite2D" unique_id=1486426993]
+position = Vector2(-1.9999995, -8.742154e-08)
+target_position = Vector2(0, 800)
+
+[connection signal="hooked" from="pivot/Sprite2D" to="." method="_on_sprite_2d_hooked"]
