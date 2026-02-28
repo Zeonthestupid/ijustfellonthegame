@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b7c08oe3jc8sg"]
+
+[ext_resource type="Script" uid="uid://du5l4edle3u43" path="res://harpoonbullet.gd" id="1_8ush6"]
+[ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="2_e37fq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ush6"]
+size = Vector2(132, 32)
+
+[node name="Harpoonbullet" type="Node2D" unique_id=751194654]
+script = ExtResource("1_8ush6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1203540687]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1682080006]
+shape = SubResource("RectangleShape2D_8ush6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=798826995]
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(1, 0.21875)
+texture = ExtResource("2_e37fq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1887314659]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

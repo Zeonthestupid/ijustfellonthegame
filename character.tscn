@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://u32ad72no8xc"]
+
+[ext_resource type="Script" uid="uid://cu7v0u6k3cp6o" path="res://Maincharacterscript.gd" id="1_glpr6"]
+[ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="2_pjt0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
+size = Vector2(42, 90)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wa5vi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pjt0s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfnr8"]
+size = Vector2(42, 90)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=286528908]
+script = ExtResource("1_glpr6")
+swimming_amp = 2.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1441652066]
+shape = SubResource("RectangleShape2D_pjt0s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=879365669]
+position = Vector2(-1.4901161e-06, -0.50000155)
+scale = Vector2(0.29687497, 0.66406244)
+sprite_frames = SubResource("SpriteFrames_wa5vi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=156739510]
+shape = SubResource("RectangleShape2D_wfnr8")
+debug_color = Color(0.7480362, 0.4134945, 0.54839736, 0.41960785)
