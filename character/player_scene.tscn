@@ -3,10 +3,42 @@
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="1_oepk2"]
 [ext_resource type="PackedScene" uid="uid://c384rmiytyxwa" path="res://harpoon_gun/harpoon_gun.tscn" id="2_58q2e"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oepk2"]
+size = Vector2(195, 117)
+
 [node name="Character" type="Node2D" unique_id=26635809]
 
 [node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("1_oepk2")]
 position = Vector2(1, -1)
+collision_mask = 255
+max_speed = 800
 
 [node name="HarpoonGun" parent="CharacterBody2D" unique_id=1783020617 instance=ExtResource("2_58q2e")]
-position = Vector2(-1, -12)
+position = Vector2(0, -11)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=821880568]
+position = Vector2(-1, 1)
+zoom = Vector2(1.725, 1.725)
+position_smoothing_enabled = true
+position_smoothing_speed = 5.525
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1450756317]
+position = Vector2(1, -12)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=705699294]
+position = Vector2(184, 214)
+shape = SubResource("RectangleShape2D_oepk2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=656782841]
+position = Vector2(411, 442)
+shape = SubResource("RectangleShape2D_oepk2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1903759213]
+position = Vector2(716, 193)
+shape = SubResource("RectangleShape2D_oepk2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1589698425]
+position = Vector2(950, 580)
+shape = SubResource("RectangleShape2D_oepk2")
