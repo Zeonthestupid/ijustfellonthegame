@@ -11,7 +11,11 @@ size = Vector2(195, 117)
 [node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("1_oepk2")]
 position = Vector2(1, -1)
 collision_mask = 255
+speed_mod = null
 max_speed = 800
+clamping_speed = null
+swim_back = null
+heath = null
 
 [node name="HarpoonGun" parent="CharacterBody2D" unique_id=1783020617 instance=ExtResource("2_58q2e")]
 position = Vector2(0, -11)

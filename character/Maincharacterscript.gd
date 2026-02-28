@@ -14,6 +14,8 @@ extends CharacterBody2D
 @export_subgroup("characterconf")
 @export var heath = 10.0
 
+@export var speed = 400
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var shotangle = 0.0
@@ -39,12 +41,21 @@ func swim(delta, velo) -> Vector2:
 		animated_sprite_2d.play("idle")
 	return velo
 
+func trident(delta):
+	velocity = Vector2(0,0)
+	var mouse_position = get_global_mouse_position()
+	
+	if Input. is_action_pressed("trident_test"):
+		var direction = (mouse_position - position).normalized()
+		velocity = (direction*speed)
+		
+	look_at(mouse_position)
+
 func _physics_process(delta):
 	var velo = Vector2(0,0)
 	velo = swim(delta, velo)
 	velocity.x = velo.x
 	velocity.y = velo.y
-	
 	
 	
 	
