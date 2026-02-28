@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7c08oe3jc8sg"]
 
-[ext_resource type="Script" uid="uid://du5l4edle3u43" path="res://harpoonbullet.gd" id="1_8ush6"]
+[ext_resource type="Script" uid="uid://du5l4edle3u43" path="res://harpoon_gun/harpoonbullet.gd" id="1_8ush6"]
 [ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="2_e37fq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ush6"]
