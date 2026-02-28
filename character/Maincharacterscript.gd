@@ -11,6 +11,9 @@ extends CharacterBody2D
 @export var clamping_speed = 0.5 
 @export var swim_back = 0.02
 
+@export_subgroup("characterconf")
+@export var heath = 10.0
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var shotangle = 0.0
