@@ -13,21 +13,39 @@ func interpolate(length, duration = 0.2) :
 	
 func _input(event):
 	if event.is_action_pressed("hook"):
-		interpolate(await check_collision(),0.05)
-		await get_tree().create_timer(0.05).timeout
-		reverse_interpolate()
 		
-func reverse_interpolate():
-	interpolate(0,0.2)
-	
+		interpolate(await check_collision(), 0.02)
+		var dist = cc2()
+		dist = dist * 0.01
+		await get_tree().create_timer(0.05).timeout
+		reverse_interpolate(0.2*dist)
+		
+
+func reverse_interpolate(x):
+	interpolate(0, x)
+
+func cc2():
+	var collision_point
+	if ray_cast_2d.is_colliding():
+		collision_point = ray_cast_2d.get_collision_point()
+		distance = (global_position - collision_point).length()
+		
+		hooked.emit(collision_point)
+		
+		
+	else:
+		distance = 150
+	return distance
 func check_collision():
 	await get_tree().create_timer(0.1).timeout
 	var collision_point
 	if ray_cast_2d.is_colliding():
 		collision_point = ray_cast_2d.get_collision_point()
 		distance = (global_position - collision_point).length()
+		
 		hooked.emit(collision_point)
+		
+		
 	else:
 		distance = 150
 	return distance
-	

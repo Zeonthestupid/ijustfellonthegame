@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ce7quq3k4gytb"]
+
+[ext_resource type="Script" uid="uid://du5l4edle3u43" path="res://harpoon_gun/harpoonbullet.gd" id="1_04lev"]
+[ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="2_kj8ee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3iy0"]
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1518010959]
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_04lev")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=913645743]
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(1, 0.21875)
+texture = ExtResource("2_kj8ee")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=898182457]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402725876]
+shape = SubResource("RectangleShape2D_n3iy0")

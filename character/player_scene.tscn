@@ -10,7 +10,8 @@ size = Vector2(195, 117)
 
 [node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("1_oepk2")]
 position = Vector2(1, -1)
-collision_mask = 255
+collision_layer = 2
+collision_mask = 6
 max_speed = 800
 
 [node name="HarpoonGun" parent="CharacterBody2D" unique_id=1783020617 instance=ExtResource("2_58q2e")]
@@ -24,8 +25,8 @@ position_smoothing_speed = 5.525
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1450756317]
 position = Vector2(1, -12)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=705699294]
 position = Vector2(184, 214)

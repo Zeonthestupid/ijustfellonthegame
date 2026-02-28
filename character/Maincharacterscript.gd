@@ -54,4 +54,8 @@ func _physics_process(delta):
 
 func _on_sprite_2d_hooked(hooked_position: Variant) -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", hooked_position, 0.4)
+	var dist = sqrt(pow(hooked_position.y - global_position.y, 2)+pow(hooked_position.x - global_position.x, 2))
+	dist = dist * 0.01
+	print(dist)
+	tween.tween_property(self, "position", hooked_position, 0.2*dist)
+	

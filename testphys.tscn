@@ -22,7 +22,3 @@ texture = ExtResource("1_6xuoa")
 
 [node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("2_dclcb")]
 position = Vector2(70, 0)
-speed_mod = 0.4
-max_speed = 500
-clamping_speed = 0.5
-swim_back = 0.02
