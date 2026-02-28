@@ -14,6 +14,7 @@ extends CharacterBody2D
 @export_subgroup("characterconf")
 @export var heath = 10.0
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var shotangle = 0.0
 var shot = false
@@ -27,6 +28,7 @@ func swim(delta, velo) -> Vector2:
 	direction = direction.normalized()
 	
 	if direction.x != 0 or direction.y !=0:
+		animated_sprite_2d.play("swim")
 		time += delta
 		var multiplier = max((sin(time * swimming_amp * PI) + clamping_speed) / 2.0, 0) - swim_back
 		velo.x += direction.x * (max_speed * multiplier) * speed_mod
@@ -34,13 +36,18 @@ func swim(delta, velo) -> Vector2:
 	else:
 		velo.x = move_toward(velocity.x, 0.25, max_speed)
 		velo.y = move_toward(velocity.y, 0.25, max_speed)
+		animated_sprite_2d.play("idle")
 	return velo
 
+		
 func _physics_process(delta):
 	var velo = Vector2(0,0)
 	velo = swim(delta, velo)
 	velocity.x = velo.x
 	velocity.y = velo.y
+	
+	
+	
 	
 	
 	move_and_slide()

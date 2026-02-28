@@ -10,5 +10,7 @@ speed_mod = 0.4
 max_speed = 500
 clamping_speed = 0.5
 swim_back = 0.02
+position = Vector2(1, -1)
 
 [node name="HarpoonGun" parent="CharacterBody2D" unique_id=1783020617 instance=ExtResource("2_58q2e")]
+position = Vector2(0, -11)
