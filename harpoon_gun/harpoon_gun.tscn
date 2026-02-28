@@ -7,8 +7,8 @@
 script = ExtResource("1_yvatc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=619925473]
-position = Vector2(12, 0)
+position = Vector2(11, 0)
 texture = ExtResource("2_cygs2")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1161150252]
-position = Vector2(56, -22)
+position = Vector2(25, -3)

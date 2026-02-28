@@ -39,7 +39,6 @@ func swim(delta, velo) -> Vector2:
 		animated_sprite_2d.play("idle")
 	return velo
 
-		
 func _physics_process(delta):
 	var velo = Vector2(0,0)
 	velo = swim(delta, velo)

@@ -3,17 +3,22 @@
 [ext_resource type="Script" uid="uid://du5l4edle3u43" path="res://harpoon_gun/harpoonbullet.gd" id="1_8ush6"]
 [ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="2_e37fq"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n3iy0"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ush6"]
 size = Vector2(132, 32)
 
 [node name="Harpoonbullet" type="Node2D" unique_id=751194654]
 script = ExtResource("1_8ush6")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1203540687]
+[node name="Bullet" type="RigidBody2D" parent="." unique_id=1977518614]
 collision_layer = 2
 collision_mask = 2
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_n3iy0")
+gravity_scale = 0.095
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1682080006]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet" unique_id=1682080006]
 shape = SubResource("RectangleShape2D_8ush6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=798826995]

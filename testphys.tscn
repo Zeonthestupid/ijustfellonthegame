@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ct71nq6hks7vq"]
+
+[ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="1_6xuoa"]
+[ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="2_dclcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5q30"]
+
+[node name="testphys" type="Node2D" unique_id=1851597723]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=823003875]
+mass = 0.013
+gravity_scale = 0.03
+constant_force = Vector2(0, -0.24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1074687480]
+shape = SubResource("RectangleShape2D_a5q30")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=277670225]
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(0.203125, 0.1875)
+texture = ExtResource("1_6xuoa")
+
+[node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("2_dclcb")]
+position = Vector2(70, 0)
+speed_mod = 0.4
+max_speed = 500
+clamping_speed = 0.5
+swim_back = 0.02

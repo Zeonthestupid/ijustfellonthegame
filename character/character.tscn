@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://yard5mbvpynv" path="res://assets/gordan 8.png" id="9_6kuvt"]
 [ext_resource type="Texture2D" uid="uid://d2s8xu4rhnvdr" path="res://assets/gordan 10.png" id="10_6610h"]
 [ext_resource type="Texture2D" uid="uid://cn20yipu2ngry" path="res://assets/gordan 9.png" id="11_0shic"]
-[ext_resource type="Script" uid="uid://cgtpbbry1886i" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
+[ext_resource type="Script" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
 size = Vector2(42, 82.5)
@@ -83,11 +83,7 @@ size = Vector2(42, 82.5)
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=286528908]
 position = Vector2(-1, 10)
 script = ExtResource("1_glpr6")
-speed_mod = null
 swimming_amp = 2.4
-max_speed = null
-clamping_speed = null
-swim_back = null
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1441652066]
 shape = SubResource("RectangleShape2D_pjt0s")
