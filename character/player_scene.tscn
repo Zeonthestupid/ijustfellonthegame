@@ -14,7 +14,6 @@ position = Vector2(1, -1)
 collision_layer = 2
 collision_mask = 6
 max_speed = 800
-heath = null
 
 [node name="HarpoonGun" parent="CharacterBody2D" unique_id=1783020617 instance=ExtResource("2_58q2e")]
 position = Vector2(0, -11)
