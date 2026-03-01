@@ -1,6 +1,9 @@
 extends CharacterBody2D
-@onready var reload: Timer = $hitbox/reload
-
+@onready var calm: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var combat: AudioStreamPlayer2D = $AudioStreamPlayer2D2
+var calmmusic = true
+var calmdb = 0.0
+var combdb = -90.0
 
 @export_category("Character params")
 @export_subgroup("Main config")
@@ -69,6 +72,8 @@ func decrease_weapon():
 	currentweapon = (currentweapon - 1) % weapons.size()
 
 func _physics_process(delta):
+	calm.volume_db = calmdb
+	combat.volume_db = combdb
 	startingoxygen -= delta * oxygenfactor
 	print(startingoxygen)
 	var velo = Vector2(0,0)
@@ -80,7 +85,8 @@ func _physics_process(delta):
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "power", 1.0, 0.1)
 		tween.tween_property(self, "power", 0.0, 1.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-		
+	if Input.is_action_just_pressed("ui_accept"):
+		switchaudio()
 	if knockback_timer>0.0:
 		velocity.x = knockback.x * power
 		velocity.y = knockback.y * power
@@ -125,20 +131,31 @@ func updatekbpower(kbpower):
 	power = kbpower
 	
 func take_damage(amount: int) -> void:
-	print(amount)
+	print("damagetaken")
 	startingoxygen -= amount
+	var x = Vector2(-cos((get_global_mouse_position() - global_position).angle())*kbfactor, -sin((get_global_mouse_position() - global_position).angle())*kbfactor)
+	apply_knockback(x, 0.25, 0.5)
 
 
 
 func PLAYER():
 	pass
 
+func switchaudio():
+	calmmusic = !calmmusic
+	if calmmusic:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "calmdb", 0.0, 0.2)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(self, "combdb", -40.0, 0.5).set_ease(Tween.EASE_IN)
+	else:
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(self, "combdb", 0.0, 0.2)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "calmdb", -40.0, 1).set_ease(Tween.EASE_IN)
+		
 
 
-
-func _on_hitbox_take_damage() -> void:
-	print("damagetaken")
-	startingoxygen -= 100
 
 
 func _on_reload_timeout() -> void:
