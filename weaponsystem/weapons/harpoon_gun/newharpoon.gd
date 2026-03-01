@@ -4,6 +4,7 @@ const BULLET = preload("res://weaponsystem/weapons/harpoon_gun/hpblt.tscn")
 
 signal harpoon_shot(rotation)
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	pass # Replace with function body.
 var time = 0.0
@@ -20,12 +21,12 @@ func _process(delta: float)-> void:
 	
 func _primary(pw, cd):
 	print('primary from gun')
+	var shotdist = Vector2.ZERO
 	var bullet_instance = BULLET.instantiate()
 	get_tree().root.add_child(bullet_instance)
 	bullet_instance.global_position = muzzle.global_position
 	bullet_instance.rotation = rotation
 	emit_signal("harpoon_shot", rotation_degrees)
-	pass
 func _secondary(pw, cd):
 	pass
 

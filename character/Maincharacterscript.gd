@@ -88,3 +88,6 @@ func _on_sprite_2d_hooked(hooked_position: Variant) -> void:
 	print(dist)
 	tween.tween_property(self, "position", hooked_position, 0.2*dist)
 	
+
+
+	
