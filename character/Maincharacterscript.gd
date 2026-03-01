@@ -55,6 +55,7 @@ func _physics_process(delta):
 		velocity.x = knockback.x
 		velocity.y = knockback.y
 		knockback_timer -= delta
+		trident(get_global_mouse_position(), 10, 2)
 		if knockback_timer<= 0.0:
 			knockback = Vector2.ZERO
 	else:

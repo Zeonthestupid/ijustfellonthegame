@@ -6,7 +6,7 @@
 [node name="trident" type="Node2D" unique_id=356059259]
 
 [node name="weapon sprite" type="Sprite2D" parent="." unique_id=32900672]
-position = Vector2(-0.99999976, 0)
-scale = Vector2(0.27236843, 0.032317072)
+position = Vector2(3, -2)
+scale = Vector2(0.27236843, 0.09390244)
 texture = ExtResource("1_y5oni")
 script = ExtResource("2_340uc")
