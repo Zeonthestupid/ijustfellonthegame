@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://yard5mbvpynv" path="res://assets/gordan 8.png" id="9_6kuvt"]
 [ext_resource type="Texture2D" uid="uid://d2s8xu4rhnvdr" path="res://assets/gordan 10.png" id="10_6610h"]
 [ext_resource type="Texture2D" uid="uid://cn20yipu2ngry" path="res://assets/gordan 9.png" id="11_0shic"]
-[ext_resource type="Script" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
+[ext_resource type="Script" uid="uid://cgtpbbry1886i" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
 [ext_resource type="Texture2D" uid="uid://46d5p7u1yo2o" path="res://assets/rope.png" id="14_hq3og"]
 [ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://weaponsystem/weapons/grappling hook/sprite_2d.gd" id="15_orckd"]
 [ext_resource type="Script" uid="uid://clgw5i5je4df6" path="res://character/trident.gd" id="17_6kuvt"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cgh7f83i23v25" path="res://weaponsystem/weaponlogic/weaponshandler.tscn" id="20_0shic"]
 [ext_resource type="PackedScene" uid="uid://c384rmiytyxwa" path="res://weaponsystem/weapons/harpoon_gun/harpoon_gun.tscn" id="21_mbhnd"]
 [ext_resource type="PackedScene" uid="uid://cnyerj2a0kmfq" path="res://weaponsystem/weapons/lightgun/lightgun.tscn" id="21_wlm6a"]
-[ext_resource type="Script" uid="uid://fwsjo4jcsxnj" path="res://weaponsystem/weapons/lightgun/lightgun.gd" id="22_wlm6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
 size = Vector2(34, 66)
@@ -99,6 +98,8 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pjt0s")
 script = ExtResource("2_orckd")
 
+[node name="reload" type="Timer" parent="hitbox" unique_id=1244013352]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=879365669]
 position = Vector2(0.031, 0.646)
 sprite_frames = SubResource("SpriteFrames_mbhnd")
@@ -136,6 +137,9 @@ shape = SubResource("CapsuleShape2D_6kuvt")
 
 [node name="HealthComponent" parent="." unique_id=1210977906 instance=ExtResource("18_6kuvt")]
 
+[node name="Timer" type="Timer" parent="HealthComponent" unique_id=352816939]
+autostart = true
+
 [node name="weaponshandler" parent="." unique_id=183465439 node_paths=PackedStringArray("weapons") instance=ExtResource("20_0shic")]
 weapons = [NodePath("../HarpoonGun"), NodePath("../Lightgun"), NodePath("../grapling hook/grapling")]
 
@@ -144,8 +148,12 @@ tweenin = 0.0
 primary_damage = 5.0
 
 [node name="Lightgun" parent="." unique_id=57169841 instance=ExtResource("21_wlm6a")]
-script = ExtResource("22_wlm6a")
 tweenout = 0.5
 primary_cooldown = 0.1
 
+[connection signal="take_damage" from="hitbox" to="." method="_on_hitbox_take_damage"]
+[connection signal="timeout" from="hitbox/reload" to="." method="_on_reload_timeout"]
 [connection signal="hooked" from="grapling hook/grapling" to="." method="_on_sprite_2d_hooked"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="timeout" from="HealthComponent/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="HealthComponent/Timer" to="HealthComponent" method="_on_timer_timeout"]
