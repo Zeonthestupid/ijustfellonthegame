@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cnyerj2a0kmfq"]
+
+[ext_resource type="Script" uid="uid://fwsjo4jcsxnj" path="res://weaponsystem/weapons/lightgun/lightgun.gd" id="1_7qf2l"]
+[ext_resource type="Texture2D" uid="uid://y6qolf6hhj1r" path="res://assets/gun a.png" id="2_h8cye"]
+
+[node name="Lightgun" type="Node2D" unique_id=1783020617]
+script = ExtResource("1_7qf2l")
+kbfactor = 100
+tweenout = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=619925473]
+visible = false
+position = Vector2(11, 0)
+texture = ExtResource("2_h8cye")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1272748997]
+visible = false
+position = Vector2(11, 0)
+texture = ExtResource("2_h8cye")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1161150252]
+position = Vector2(25, -3)

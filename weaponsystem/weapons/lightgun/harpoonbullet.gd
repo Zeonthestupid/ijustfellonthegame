@@ -1,6 +1,6 @@
 extends RigidBody2D
-@export var damage = 5
-@export var SPEED: int = 6000
+@export var damage = 1.2
+@export var SPEED: int = 3000
 @export var impact_particles: PackedScene
 var time = 0
 # Called when the node enters the scene tree for the first time.

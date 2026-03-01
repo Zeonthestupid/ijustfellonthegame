@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://dwscna0ojwpwr"]
 
 [ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="1_07377"]
-[ext_resource type="Script" uid="uid://dkpsq3l4nwfwa" path="res://weaponsystem/weapons/grappling hook/pivot.gd" id="1_do18u"]
 [ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://weaponsystem/weapons/grappling hook/sprite_2d.gd" id="2_livms"]
 
 [node name="GrapplingHook" type="Node2D" unique_id=852701988]
 
 [node name="pivot" type="Node2D" parent="." unique_id=572442304]
-script = ExtResource("1_do18u")
 
 [node name="Sprite2D" type="Sprite2D" parent="pivot" unique_id=139117213]
 texture_repeat = 2

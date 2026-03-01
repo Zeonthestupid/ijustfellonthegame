@@ -35,7 +35,6 @@ func _process(delta: float) -> void:
 	
 	
 func handleprimary(delta):
-	print(primarytimer)
 	if primarytimer < primary_cooldown:
 		primarytimer += delta
 	elif Input.is_action_just_pressed(paction):
@@ -60,5 +59,8 @@ func handlespecial(delta):
 @abstract func _primary(primary_damage, primary_duration)
 @abstract func _secondary(primary_damage, primary_duration)
 @abstract func _special(primary_damage, primary_duration)
+
+@abstract func hideheld()
+@abstract func showheld()
 func getname():
 	return name

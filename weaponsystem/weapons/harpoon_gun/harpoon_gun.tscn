@@ -5,6 +5,8 @@
 
 [node name="HarpoonGun" type="Node2D" unique_id=1783020617]
 script = ExtResource("1_yvatc")
+kbfactor = 1500
+tweenout = 0.8
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=619925473]
 position = Vector2(11, 0)

@@ -53,3 +53,7 @@ func _secondary(v,w):
 	pass
 func _special(v,w):
 	pass
+func hideheld():
+	pass
+func showheld():
+	pass

@@ -1,6 +1,6 @@
 extends Weapon
 
-const BULLET = preload("res://weaponsystem/weapons/harpoon_gun/hpblt.tscn")
+const BULLET = preload("res://weaponsystem/weapons/lightgun/lgblt.tscn")
 @export var kbfactor = 1000
 @export var tweenin = 0.1
 @export var tweenout = 0.5

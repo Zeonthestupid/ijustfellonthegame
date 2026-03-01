@@ -23,9 +23,8 @@ extends CharacterBody2D
 @export var currentweapon = 0
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
-
-
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var weaponshandler: Node2D = $weaponshandler
 
 var shotangle = 0.0
 var shot = false
@@ -33,6 +32,11 @@ var shot = false
 var time = 0.0
 
 var power = 0.0
+
+
+func _ready():
+	weaponshandler.knockback.connect(_apply_knockback)
+	
 func swim(delta, velo) -> Vector2:
 	var direction = Vector2(0,0)
 	direction.x = Input.get_axis("player_left", "player_right")
@@ -89,5 +93,18 @@ func _on_sprite_2d_hooked(hooked_position: Variant) -> void:
 	tween.tween_property(self, "position", hooked_position, 0.2*dist)
 	
 
-
-	
+func _apply_knockback(kb, kbtimer):
+	knockback = kb
+	knockback_timer = kb
+	pass
+func apply_knockback(kb, tweenin, tweenout):
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "power", 1.0, tweenin)
+	tween.tween_property(self, "power", 0.0, tweenout).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	print("kb")
+	print(kb)
+	knockback = kb
+	knockback_timer = tweenin+tweenout
+	pass
+func updatekbpower(kbpower):
+	power = kbpower
