@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8s15nhtnft0a"]
+
+[ext_resource type="Script" uid="uid://co2juxh8p5cy6" path="res://weaponsystem/weaponlogic/weaponhandler.gd" id="1_xvt6o"]
+[ext_resource type="Script" uid="uid://d3wueeuilo6if" path="res://weaponsystem/weaponlogic/weapons.gd" id="2_5fhbv"]
+
+[node name="weaponhandler" type="Node2D" unique_id=1990612955]
+script = ExtResource("1_xvt6o")
+weapons = Array[ExtResource("2_5fhbv")]([null, null, null, null, null])

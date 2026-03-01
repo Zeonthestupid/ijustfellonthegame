@@ -1,6 +1,6 @@
-extends Node2D
+extends Weapon
 
-const BULLET = preload("res://harpoon_gun/hpblt.tscn")
+const BULLET = preload("res://weaponsystem/weapons/harpoon_gun/hpblt.tscn")
 
 signal harpoon_shot(rotation)
 # Called when the node enters the scene tree for the first time.
@@ -17,19 +17,18 @@ func _process(delta: float)-> void:
 		scale.y = -1
 	else:
 		scale.y = 1
-		
-
-	# Get hold time, release with a large hold velocity and deaccelerate every frame.
-	# Check wall colision, and then if it's been colided, bring player to it, else bring it to player.
 	
-	if Input.is_action_just_pressed("weapon_primary"):
-		shoot(1)
-	
-	
-	
-func shoot(charge):
+func _primary(pw, cd):
+	print('primary from gun')
 	var bullet_instance = BULLET.instantiate()
 	get_tree().root.add_child(bullet_instance)
 	bullet_instance.global_position = muzzle.global_position
 	bullet_instance.rotation = rotation
 	emit_signal("harpoon_shot", rotation_degrees)
+	pass
+func _secondary(pw, cd):
+	pass
+
+func _special(pw, cd):
+	pass
+	

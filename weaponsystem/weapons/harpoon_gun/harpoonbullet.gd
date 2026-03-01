@@ -8,7 +8,6 @@ func _ready() -> void:
 	time = 0
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	var tween = get_tree().create_tween()

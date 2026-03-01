@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgh7f83i23v25"]
+
+[ext_resource type="Script" uid="uid://co2juxh8p5cy6" path="res://weaponsystem/weaponlogic/weaponhandler.gd" id="1_ceu53"]
+
+[node name="weaponshandler" type="Node2D" unique_id=183465439]
+script = ExtResource("1_ceu53")

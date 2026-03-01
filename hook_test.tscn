@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2omd5mdyftur"]
 
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="1_hvcca"]
-[ext_resource type="PackedScene" uid="uid://dwscna0ojwpwr" path="res://grappling hook/grappling hook.tscn" id="2_jb5ct"]
+[ext_resource type="PackedScene" uid="uid://dwscna0ojwpwr" path="res://weaponsystem/weapons/grappling hook/grappling hook.tscn" id="2_jb5ct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2tp6"]
 size = Vector2(172, 168)

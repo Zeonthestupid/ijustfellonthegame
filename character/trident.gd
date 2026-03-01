@@ -24,6 +24,10 @@ func _physics_process(delta: float) -> void:
 			body.take_damage(damage)
 		queue_free()
 
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+
 func spawn_impact(pos: Vector2, normal: Vector2):
 	var p = impact_particles.instantiate()
 	p.global_position = pos

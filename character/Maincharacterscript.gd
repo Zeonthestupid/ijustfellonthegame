@@ -18,6 +18,9 @@ extends CharacterBody2D
 @export var kbfactor = 1000
 @export var kbtime = 1.0
 
+
+@export var weapons: Array[Node2D]
+@export var currentweapon = 0
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 
@@ -48,7 +51,10 @@ func swim(delta, velo) -> Vector2:
 		animated_sprite_2d.play("idle")
 	return velo
 
-
+func increase_weapon():
+	currentweapon = (currentweapon + 1) % weapons.size()
+func decrease_weapon():
+	currentweapon = (currentweapon - 1) % weapons.size()
 
 func _physics_process(delta):
 	var velo = Vector2(0,0)
@@ -60,7 +66,7 @@ func _physics_process(delta):
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "power", 1.0, 0.1)
 		tween.tween_property(self, "power", 0.0, 1.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-	
+		
 	if knockback_timer>0.0:
 		velocity.x = knockback.x * power
 		velocity.y = knockback.y * power

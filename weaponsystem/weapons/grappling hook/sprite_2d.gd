@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Weapon
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 var distance: float = 150
 
@@ -11,14 +11,7 @@ func interpolate(length, duration = 0.2) :
 	tween_offset. tween_property(self, "offset",Vector2(0,length/2.0),duration)
 	tween_rect_h. tween_property(self, "region_rect", Rect2(0,0,16,length),duration)
 	
-func _input(event):
-	if event.is_action_pressed("hook"):
 		
-		interpolate(await check_collision(), 0.02)
-		var dist = cc2()
-		dist = dist * 0.01
-		await get_tree().create_timer(0.05).timeout
-		reverse_interpolate(0.2*dist)
 		
 
 func reverse_interpolate(x):
@@ -45,6 +38,18 @@ func check_collision():
 		hooked.emit(collision_point)
 		
 		
+		
 	else:
 		distance = 150
 	return distance
+func _primary(v, w):
+	get_parent().look_at(get_global_mouse_position())
+	interpolate(await check_collision(), 0.02)
+	var dist = cc2()
+	dist = dist * 0.01
+	await get_tree().create_timer(0.05).timeout
+	reverse_interpolate(0.2*dist)
+func _secondary(v,w):
+	pass
+func _special(v,w):
+	pass

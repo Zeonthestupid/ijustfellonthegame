@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dwscna0ojwpwr"]
 
 [ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="1_07377"]
-[ext_resource type="Script" uid="uid://dkpsq3l4nwfwa" path="res://grappling hook/pivot.gd" id="1_do18u"]
-[ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://grappling hook/sprite_2d.gd" id="2_livms"]
+[ext_resource type="Script" uid="uid://dkpsq3l4nwfwa" path="res://weaponsystem/weapons/grappling hook/pivot.gd" id="1_do18u"]
+[ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://weaponsystem/weapons/grappling hook/sprite_2d.gd" id="2_livms"]
 
 [node name="GrapplingHook" type="Node2D" unique_id=852701988]
 

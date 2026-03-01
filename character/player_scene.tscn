@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b3u1pilxnnxnw"]
 
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="1_oepk2"]
-[ext_resource type="PackedScene" uid="uid://c384rmiytyxwa" path="res://harpoon_gun/harpoon_gun.tscn" id="2_58q2e"]
 [ext_resource type="PackedScene" uid="uid://8i0c00le1m1h" path="res://enemysystem/spawn_trigger.tscn" id="3_58q2e"]
 [ext_resource type="Script" uid="uid://b3lxqriifx870" path="res://enemysystem/spawnerlogic/spawnwave.gd" id="4_3t6un"]
 [ext_resource type="PackedScene" uid="uid://c2536k2sai4an" path="res://enemysystem/enemy_spawner.tscn" id="5_5w5go"]
@@ -18,8 +17,6 @@ metadata/_custom_type_script = "uid://b3lxqriifx870"
 
 [sub_resource type="Resource" id="Resource_dox6j"]
 script = ExtResource("4_3t6un")
-spawn_group = "room_2"
-enemy_count = 1
 metadata/_custom_type_script = "uid://b3lxqriifx870"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w5go"]
@@ -31,9 +28,6 @@ position = Vector2(1, -1)
 collision_layer = 2
 collision_mask = 6
 max_speed = 800
-
-[node name="HarpoonGun" parent="player" unique_id=1783020617 instance=ExtResource("2_58q2e")]
-position = Vector2(0, -11)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=821880568]
 position = Vector2(-1, 1)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c384rmiytyxwa"]
 
-[ext_resource type="Script" uid="uid://cvpf77ppg4l1r" path="res://harpoon_gun/newharpoon.gd" id="1_yvatc"]
+[ext_resource type="Script" uid="uid://cvpf77ppg4l1r" path="res://weaponsystem/weapons/harpoon_gun/newharpoon.gd" id="1_yvatc"]
 [ext_resource type="Texture2D" uid="uid://y6qolf6hhj1r" path="res://assets/gun a.png" id="2_cygs2"]
 
 [node name="HarpoonGun" type="Node2D" unique_id=1783020617]

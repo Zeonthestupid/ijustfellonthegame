@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7c08oe3jc8sg"]
 
-[ext_resource type="PackedScene" uid="uid://ce7quq3k4gytb" path="res://harpoon_gun/hpblt.tscn" id="1_efq8s"]
+[ext_resource type="PackedScene" uid="uid://ce7quq3k4gytb" path="res://weaponsystem/weapons/harpoon_gun/hpblt.tscn" id="1_efq8s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_efq8s"]
 
