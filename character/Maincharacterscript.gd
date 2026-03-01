@@ -43,19 +43,18 @@ func swim(delta, velo) -> Vector2:
 		animated_sprite_2d.play("idle")
 	return velo
 
-func trident(direction: Vector2, force: float, knockback_duration:float) -> void:
-	knockback = direction*force
-	knockback_timer = knockback_duration
-	
+
 
 func _physics_process(delta):
 	var velo = Vector2(0,0)
+	
+	if Input.is_action_just_pressed("trident_test"):
+		knockback = look_at(get_global_mouse_position())
 	
 	if knockback_timer>0.0:
 		velocity.x = knockback.x
 		velocity.y = knockback.y
 		knockback_timer -= delta
-		trident(get_global_mouse_position(), 10, 2)
 		if knockback_timer<= 0.0:
 			knockback = Vector2.ZERO
 	else:
