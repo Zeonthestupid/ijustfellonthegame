@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var reload: Timer = $Timer
 @onready var calm: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var combat: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 var calmmusic = true
@@ -27,8 +28,7 @@ var combdb = -90.0
 @export var kbtime = 1.0
 
 @export_subgroup("oxygen")
-@export var startingoxygen = 200
-@export var oxygenfactor = 1
+
 
 @export var weapons: Array[Node2D]
 @export var currentweapon = 0
@@ -36,7 +36,8 @@ var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var weaponshandler: Node2D = $weaponshandler
-
+var startingoxygen = 200
+var oxygenfactor = 1.0
 var shotangle = 0.0
 var shot = false
 
@@ -132,7 +133,7 @@ func updatekbpower(kbpower):
 	
 func take_damage(amount: int) -> void:
 	print("damagetaken")
-	startingoxygen -= amount
+	startingoxygen -= 100
 	var x = Vector2(-cos((get_global_mouse_position() - global_position).angle())*kbfactor, -sin((get_global_mouse_position() - global_position).angle())*kbfactor)
 	apply_knockback(x, 0.25, 0.5)
 

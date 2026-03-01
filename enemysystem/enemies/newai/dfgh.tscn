@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://drmk82vlm73og"]
+
+[ext_resource type="Script" uid="uid://cdul3flng733b" path="res://enemysystem/enemies/newai/dfgh.gd" id="1_weryg"]
+[ext_resource type="Texture2D" uid="uid://byyx4w1pnj6a" path="res://assets/DSC_1856.JPG" id="2_12nka"]
+[ext_resource type="PackedScene" uid="uid://dxo40sxjrv0ya" path="res://health_component.tscn" id="3_baams"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tolmy"]
+size = Vector2(48, 38)
+
+[node name="Dfgh" type="CharacterBody2D" unique_id=285410421]
+script = ExtResource("1_weryg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1236659948]
+position = Vector2(0, -4.7683716e-07)
+scale = Vector2(0.008261472, 0.01195398)
+texture = ExtResource("2_12nka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=349455845]
+shape = SubResource("RectangleShape2D_tolmy")
+
+[node name="HealthComponent" parent="." unique_id=1210977906 instance=ExtResource("3_baams")]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=414202740]
+navigation_layers = 7
