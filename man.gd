@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 200
 var time = 0.0
 var rng = RandomNumberGenerator.new()
+var power = 0.0
+var attacktimer = 0.0
 
 var at1 = false
 var at2 = false
@@ -21,17 +23,34 @@ func attack():
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	var direction = Vector2(0,0)
 	time += delta
 	if time > 1.0:
 		time = 0.0
 		attack()
 	if at2:
-		var direction = position.direction_to(player.position)
-		velocity = direction * SPEED
-		move_and_slide()
+
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "power", 2.0, 0.1)
+		tween.tween_property(self, "power", 0.0, 1.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		attacktimer = 1.0
 		at2 = false
+	
+	
+	if attacktimer>0.0:
+		direction = position.direction_to(player.position)
+		print(power)
+		velocity.x = direction.x * power * SPEED
+		velocity.y = direction.y * power * SPEED
+		
+		
+		attacktimer -= delta
+		if attacktimer<= 0.0:
+			direction = Vector2.ZERO
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.x = 0
+		velocity.y = 0
+	
+		
 
 	move_and_slide()
