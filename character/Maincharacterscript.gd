@@ -14,7 +14,9 @@ extends CharacterBody2D
 @export_subgroup("characterconf")
 @export var heath = 10.0
 
-@export var speed = 400
+var knockback: Vector2 = Vector2.ZERO
+var knockback_timer: float = 0.0
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -41,21 +43,24 @@ func swim(delta, velo) -> Vector2:
 		animated_sprite_2d.play("idle")
 	return velo
 
-func trident(delta):
-	velocity = Vector2(0,0)
-	var mouse_position = get_global_mouse_position()
+func trident(direction: Vector2, force: float, knockback_duration:float) -> void:
+	knockback = direction*force
+	knockback_timer = knockback_duration
 	
-	if Input. is_action_pressed("trident_test"):
-		var direction = (mouse_position - position).normalized()
-		velocity = (direction*speed)
-		
-	look_at(mouse_position)
 
 func _physics_process(delta):
 	var velo = Vector2(0,0)
-	velo = swim(delta, velo)
-	velocity.x = velo.x
-	velocity.y = velo.y
+	
+	if knockback_timer>0.0:
+		velocity.x = knockback.x
+		velocity.y = knockback.y
+		knockback_timer -= delta
+		if knockback_timer<= 0.0:
+			knockback = Vector2.ZERO
+	else:
+		velo = swim(delta, velo)
+		velocity.x = velo.x
+		velocity.y = velo.y
 	
 	
 	
