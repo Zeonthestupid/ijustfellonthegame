@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://oq348bsfd2hb"]
+
+[sub_resource type="Curve" id="Curve_7u1vv"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9788135, 90.18194), 248.94054, 0.0, 0, 0]
+point_count = 2
+
+[node name="bubble pop" type="Node2D" unique_id=310737551]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1733016320]
+emitting = false
+lifetime = 0.36
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 27.78
+initial_velocity_max = 67.46
+linear_accel_min = -88.1
+linear_accel_max = -88.09
+damping_curve = SubResource("Curve_7u1vv")

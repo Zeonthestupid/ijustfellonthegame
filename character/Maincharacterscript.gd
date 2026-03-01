@@ -80,6 +80,7 @@ func _physics_process(delta):
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "power", 1.0, 0.1)
 		tween.tween_property(self, "power", 0.0, 1.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		await get_tree().create_timer(0.5).timeout
 		
 	if knockback_timer>0.0:
 		velocity.x = knockback.x * power
