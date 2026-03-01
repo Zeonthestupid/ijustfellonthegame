@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu7v0u6k3cp6o" path="res://character/Maincharacterscript.gd" id="1_glpr6"]
 [ext_resource type="Texture2D" uid="uid://bwbeod1rpd5yn" path="res://assets/gordan 1.png" id="2_gx66j"]
-[ext_resource type="Script" path="res://character/hitbox.gd" id="2_orckd"]
+[ext_resource type="Script" uid="uid://d0pyl3d3n5y5l" path="res://character/hitbox.gd" id="2_orckd"]
 [ext_resource type="Texture2D" uid="uid://7bmc3g82oxg7" path="res://assets/gordan 2.png" id="3_8brn5"]
 [ext_resource type="Texture2D" uid="uid://urf4oumo5ei5" path="res://assets/gordan 3.png" id="4_b4qc5"]
 [ext_resource type="Texture2D" uid="uid://dide0n1qn407r" path="res://assets/gordan 4.png" id="5_hd715"]
@@ -12,10 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://yard5mbvpynv" path="res://assets/gordan 8.png" id="9_6kuvt"]
 [ext_resource type="Texture2D" uid="uid://d2s8xu4rhnvdr" path="res://assets/gordan 10.png" id="10_6610h"]
 [ext_resource type="Texture2D" uid="uid://cn20yipu2ngry" path="res://assets/gordan 9.png" id="11_0shic"]
-[ext_resource type="Script" uid="uid://cgtpbbry1886i" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
+[ext_resource type="Script" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
 [ext_resource type="Script" uid="uid://dkpsq3l4nwfwa" path="res://grappling hook/pivot.gd" id="13_hq3og"]
 [ext_resource type="Texture2D" uid="uid://46d5p7u1yo2o" path="res://assets/rope.png" id="14_hq3og"]
 [ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://grappling hook/sprite_2d.gd" id="15_orckd"]
+[ext_resource type="Script" uid="uid://clgw5i5je4df6" path="res://character/trident.gd" id="17_6kuvt"]
+[ext_resource type="PackedScene" uid="uid://dxo40sxjrv0ya" path="res://health_component.tscn" id="18_6kuvt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
 size = Vector2(34, 66)
@@ -81,9 +83,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfnr8"]
-size = Vector2(42, 82.5)
-
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=286528908]
 position = Vector2(-1, 10)
 script = ExtResource("1_glpr6")
@@ -101,12 +100,6 @@ animation = &"swim"
 autoplay = "idle"
 frame_progress = 0.7656351
 script = ExtResource("12_8brn5")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=156739510]
-position = Vector2(0, 0.99999845)
-scale = Vector2(0.8, 0.8)
-shape = SubResource("RectangleShape2D_wfnr8")
-debug_color = Color(0.7480362, 0.4134945, 0.54839736, 0.41960785)
 
 [node name="grapling hook" type="Node2D" parent="." unique_id=2112945148]
 position = Vector2(1.0000191, -7.999997)
@@ -126,7 +119,15 @@ position = Vector2(-1.9999995, -8.742154e-08)
 target_position = Vector2(0, 800)
 
 [node name="trident" type="Node2D" parent="." unique_id=2099051032]
+script = ExtResource("17_6kuvt")
 
 [node name="Sprite2D" type="Sprite2D" parent="trident" unique_id=750268132]
+
+[node name="HealthComponent" parent="." unique_id=1210977906 instance=ExtResource("18_6kuvt")]
+
+[node name="healthbox" type="CollisionShape2D" parent="." unique_id=47037802]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_pjt0s")
+script = ExtResource("2_orckd")
 
 [connection signal="hooked" from="grapling hook/Sprite2D" to="." method="_on_sprite_2d_hooked"]

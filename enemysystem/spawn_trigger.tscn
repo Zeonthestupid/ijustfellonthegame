@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://8i0c00le1m1h"]
+
+[ext_resource type="Script" uid="uid://b85nvcwiq707d" path="res://enemysystem/spawnerlogic/spawntrigger.gd" id="1_or767"]
+
+[node name="SpawnTrigger" type="Area2D" unique_id=61985081]
+script = ExtResource("1_or767")
