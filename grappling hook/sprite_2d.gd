@@ -41,8 +41,7 @@ func check_collision():
 	var collision_point
 	if ray_cast_2d.is_colliding():
 		collision_point = ray_cast_2d.get_collision_point()
-		distance = (global_position - collision_point).length()
-		
+		distance = (global_position - collision_point).length()	
 		hooked.emit(collision_point)
 		
 		

@@ -1,6 +1,5 @@
 extends RigidBody2D
-@export var speedstuff = 500000
-@export var accelerationfactor = 90
+@export var accelerationfactor = 400
 var SPEED: int = 5000
 var acceleration = 0
 var time = 0

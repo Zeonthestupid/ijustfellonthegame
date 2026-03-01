@@ -19,4 +19,4 @@ region_rect = Rect2(0, 0, 123.534, 0)
 script = ExtResource("2_livms")
 
 [node name="RayCast2D" type="RayCast2D" parent="pivot/Sprite2D" unique_id=1693281099]
-target_position = Vector2(0, 800)
+target_position = Vector2(-2.000035, 800)

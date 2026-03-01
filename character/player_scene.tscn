@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="1_oepk2"]
 [ext_resource type="PackedScene" uid="uid://c384rmiytyxwa" path="res://harpoon_gun/harpoon_gun.tscn" id="2_58q2e"]
+[ext_resource type="PackedScene" uid="uid://cdfm8gnnxa8gq" path="res://man.tscn" id="3_58q2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oepk2"]
-size = Vector2(195, 117)
+size = Vector2(114.75, 78.25)
 
 [node name="Character" type="Node2D" unique_id=26635809]
 
@@ -13,8 +14,6 @@ position = Vector2(1, -1)
 collision_layer = 2
 collision_mask = 6
 max_speed = 800
-clamping_speed = null
-swim_back = null
 heath = null
 
 [node name="HarpoonGun" parent="CharacterBody2D" unique_id=1783020617 instance=ExtResource("2_58q2e")]
@@ -22,7 +21,8 @@ position = Vector2(0, -11)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=821880568]
 position = Vector2(-1, 1)
-zoom = Vector2(1.725, 1.725)
+zoom = Vector2(2.69, 2.69)
+limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 5.525
 
@@ -32,17 +32,19 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=705699294]
-position = Vector2(184, 214)
+position = Vector2(155, 98)
 shape = SubResource("RectangleShape2D_oepk2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=656782841]
-position = Vector2(411, 442)
+position = Vector2(153, -79)
 shape = SubResource("RectangleShape2D_oepk2")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1903759213]
-position = Vector2(716, 193)
+position = Vector2(269, 98)
 shape = SubResource("RectangleShape2D_oepk2")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1589698425]
-position = Vector2(950, 580)
+position = Vector2(-100, -150)
 shape = SubResource("RectangleShape2D_oepk2")
+
+[node name="basic enemy" parent="." unique_id=189267909 instance=ExtResource("3_58q2e")]

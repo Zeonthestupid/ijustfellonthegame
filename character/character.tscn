@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu7v0u6k3cp6o" path="res://character/Maincharacterscript.gd" id="1_glpr6"]
 [ext_resource type="Texture2D" uid="uid://bwbeod1rpd5yn" path="res://assets/gordan 1.png" id="2_gx66j"]
+[ext_resource type="Script" uid="uid://d0pyl3d3n5y5l" path="res://character/hitbox.gd" id="2_orckd"]
 [ext_resource type="Texture2D" uid="uid://7bmc3g82oxg7" path="res://assets/gordan 2.png" id="3_8brn5"]
 [ext_resource type="Texture2D" uid="uid://urf4oumo5ei5" path="res://assets/gordan 3.png" id="4_b4qc5"]
 [ext_resource type="Texture2D" uid="uid://dide0n1qn407r" path="res://assets/gordan 4.png" id="5_hd715"]
@@ -12,12 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://d2s8xu4rhnvdr" path="res://assets/gordan 10.png" id="10_6610h"]
 [ext_resource type="Texture2D" uid="uid://cn20yipu2ngry" path="res://assets/gordan 9.png" id="11_0shic"]
 [ext_resource type="Script" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
-[ext_resource type="Script" path="res://grappling hook/pivot.gd" id="13_hq3og"]
+[ext_resource type="Script" uid="uid://dkpsq3l4nwfwa" path="res://grappling hook/pivot.gd" id="13_hq3og"]
 [ext_resource type="Texture2D" uid="uid://46d5p7u1yo2o" path="res://assets/rope.png" id="14_hq3og"]
 [ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://grappling hook/sprite_2d.gd" id="15_orckd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
-size = Vector2(42, 82.5)
+size = Vector2(34, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbhnd"]
 animations = [{
@@ -89,7 +90,9 @@ script = ExtResource("1_glpr6")
 swimming_amp = 2.4
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1441652066]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pjt0s")
+script = ExtResource("2_orckd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=879365669]
 position = Vector2(0.031, 0.646)

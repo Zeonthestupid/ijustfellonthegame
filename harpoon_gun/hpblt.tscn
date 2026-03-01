@@ -4,18 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://icon.svg" id="2_kj8ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3iy0"]
+size = Vector2(20, 4)
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=1518010959]
 mass = 0.001
-gravity_scale = 0.0
+gravity_scale = 0.015
 script = ExtResource("1_04lev")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=913645743]
-position = Vector2(0, 4.7683716e-07)
-scale = Vector2(1, 0.21875)
+scale = Vector2(0.1484375, 0.031250004)
 texture = ExtResource("2_kj8ee")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=898182457]
+rect = Rect2(-54, -54, 108, 108)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1402725876]
 shape = SubResource("RectangleShape2D_n3iy0")
