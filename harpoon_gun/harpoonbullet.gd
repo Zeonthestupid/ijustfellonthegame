@@ -1,5 +1,5 @@
 extends RigidBody2D
-@export var damage = 5.0
+@export var damage = 1.2
 @export var SPEED: int = 3000
 @export var impact_particles: PackedScene
 var time = 0
