@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ch8jtv6ut6tgr"]
+
+[ext_resource type="PackedScene" uid="uid://crle1temgkff8" path="res://roomas/room.tscn" id="1_mdxwk"]
+
+[node name="room" unique_id=285869251 instance=ExtResource("1_mdxwk")]
+
+[node name="entrance" type="Marker2D" parent="enemy spawns" parent_id_path=PackedInt32Array(722004494) index="0" unique_id=1951988332]
+position = Vector2(88, 24)
+
+[node name="entrance2" type="Marker2D" parent="enemy spawns" parent_id_path=PackedInt32Array(722004494) index="1" unique_id=181175431]
+position = Vector2(88, 56)
+
+[node name="TileMap" parent="." index="2" unique_id=239808004]
+layer_0/tile_data = PackedInt32Array(131069, 65536, 0, 262141, 65536, 0, -3, 65536, 0, -131075, 65536, 0, -131073, 65536, 0, -196607, 65536, 0, -196605, 65536, 0, 393215, 0, 0, 327681, 0, 0, 327683, 0, 0, -196603, 65536, 0, -65531, 327680, 0, 327685, 327680, 0, 393213, 65536, 0, 524285, 65536, 0, 524287, 65536, 0, 458753, 65536, 0, 458755, 65536, 0, 458757, 65536, 0)
+
+[node name="playerspawn" type="Marker2D" parent="." index="4" unique_id=937557916]
+position = Vector2(25, 32)
