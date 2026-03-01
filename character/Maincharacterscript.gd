@@ -14,6 +14,10 @@ extends CharacterBody2D
 @export_subgroup("characterconf")
 @export var heath = 10.0
 
+@export_subgroup("kb")
+@export var kbfactor = 1000
+@export var kbtime = 1.0
+
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 
@@ -49,7 +53,9 @@ func _physics_process(delta):
 	var velo = Vector2(0,0)
 	
 	if Input.is_action_just_pressed("trident_test"):
-		knockback = look_at(get_global_mouse_position())
+		knockback = Vector2(cos((get_global_mouse_position() - global_position).angle())*kbfactor, sin((get_global_mouse_position() - global_position).angle())*kbfactor)
+		print(knockback)
+		knockback_timer = kbtime
 	
 	if knockback_timer>0.0:
 		velocity.x = knockback.x
@@ -61,9 +67,6 @@ func _physics_process(delta):
 		velo = swim(delta, velo)
 		velocity.x = velo.x
 		velocity.y = velo.y
-	
-	
-	
 	
 	move_and_slide()
 
