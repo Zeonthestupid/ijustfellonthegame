@@ -9,16 +9,16 @@ size = Vector2(114.75, 78.25)
 
 [node name="Character" type="Node2D" unique_id=26635809]
 
-[node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("1_oepk2")]
+[node name="player" parent="." unique_id=286528908 instance=ExtResource("1_oepk2")]
 position = Vector2(1, -1)
 collision_layer = 2
 collision_mask = 6
 max_speed = 800
 
-[node name="HarpoonGun" parent="CharacterBody2D" unique_id=1783020617 instance=ExtResource("2_58q2e")]
+[node name="HarpoonGun" parent="player" unique_id=1783020617 instance=ExtResource("2_58q2e")]
 position = Vector2(0, -11)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=821880568]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=821880568]
 position = Vector2(-1, 1)
 zoom = Vector2(2.69, 2.69)
 limit_enabled = false

@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 2
+const SPEED = 200
 var time = 0.0
 var rng = RandomNumberGenerator.new()
 
 var at1 = false
 var at2 = false
 var at3 = false
-
+@onready var player := $"../player"
 
 func attack():
 	var x = rng.randi_range(1, 3)
@@ -26,7 +26,9 @@ func _physics_process(delta: float) -> void:
 		time = 0.0
 		attack()
 	if at2:
-		velocity = get_global_mouse_position() * SPEED
+		var direction = position.direction_to(player.position)
+		velocity = direction * SPEED
+		move_and_slide()
 		at2 = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

@@ -29,6 +29,7 @@ var shot = false
 
 var time = 0.0
 
+var power = 0.0
 func swim(delta, velo) -> Vector2:
 	var direction = Vector2(0,0)
 	direction.x = Input.get_axis("player_left", "player_right")
@@ -55,10 +56,13 @@ func _physics_process(delta):
 		knockback = Vector2(cos((get_global_mouse_position() - global_position).angle())*kbfactor, sin((get_global_mouse_position() - global_position).angle())*kbfactor)
 		print(knockback)
 		knockback_timer = kbtime
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "power", 1.0, 0.1)
+		tween.tween_property(self, "power", 0.0, 1.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	
 	if knockback_timer>0.0:
-		velocity.x = knockback.x
-		velocity.y = knockback.y
+		velocity.x = knockback.x * power
+		velocity.y = knockback.y * power
 		knockback_timer -= delta
 		if knockback_timer<= 0.0:
 			knockback = Vector2.ZERO
