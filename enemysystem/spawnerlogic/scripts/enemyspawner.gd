@@ -19,5 +19,5 @@ func spawn_enemy(pos: Vector2):
 	var enemy = enemy_scene.instantiate()
 	enemy.global_position = pos
 	enemy.velocity = Vector2.ZERO
-	get_tree().current_scene.add_child(enemy)
+	get_tree().current_scene.call_deferred("add_child", enemy)
 	

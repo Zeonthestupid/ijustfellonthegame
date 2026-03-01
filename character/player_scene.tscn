@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b3u1pilxnnxnw"]
 
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="1_oepk2"]
-[ext_resource type="PackedScene" uid="uid://8i0c00le1m1h" path="res://enemysystem/spawn_trigger.tscn" id="3_58q2e"]
-[ext_resource type="Script" uid="uid://b3lxqriifx870" path="res://enemysystem/spawnerlogic/spawnwave.gd" id="4_3t6un"]
-[ext_resource type="PackedScene" uid="uid://c2536k2sai4an" path="res://enemysystem/enemy_spawner.tscn" id="5_5w5go"]
+[ext_resource type="PackedScene" uid="uid://8i0c00le1m1h" path="res://enemysystem/spawnerlogic/spawn_trigger.tscn" id="3_58q2e"]
+[ext_resource type="Script" uid="uid://b3lxqriifx870" path="res://enemysystem/spawnerlogic/scripts/spawnwave.gd" id="4_3t6un"]
+[ext_resource type="PackedScene" uid="uid://c2536k2sai4an" path="res://enemysystem/spawnerlogic/enemy_spawner.tscn" id="5_5w5go"]
+[ext_resource type="PackedScene" uid="uid://cupj283y8hjut" path="res://enemysystem/enemies/basic/test2/man.tscn" id="6_dox6j"]
 [ext_resource type="PackedScene" uid="uid://cdfm8gnnxa8gq" path="res://enemysystem/enemies/basic/test/man.tscn" id="6_r02k2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oepk2"]
@@ -17,6 +18,8 @@ metadata/_custom_type_script = "uid://b3lxqriifx870"
 
 [sub_resource type="Resource" id="Resource_dox6j"]
 script = ExtResource("4_3t6un")
+spawn_group = "room_2"
+enemy_count = 1
 metadata/_custom_type_script = "uid://b3lxqriifx870"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w5go"]
@@ -74,4 +77,4 @@ debug_color = Color(0.7260931, 0.4763679, 0, 0.41960785)
 
 [node name="EnemySpawner2" parent="." unique_id=257321240 groups=["room_2"] instance=ExtResource("5_5w5go")]
 position = Vector2(36, -112)
-enemy_scene = ExtResource("6_r02k2")
+enemy_scene = ExtResource("6_dox6j")

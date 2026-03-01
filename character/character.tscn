@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://cgh7f83i23v25" path="res://weaponsystem/weaponlogic/weaponshandler.tscn" id="20_0shic"]
 [ext_resource type="PackedScene" uid="uid://c384rmiytyxwa" path="res://weaponsystem/weapons/harpoon_gun/harpoon_gun.tscn" id="21_mbhnd"]
 [ext_resource type="PackedScene" uid="uid://cnyerj2a0kmfq" path="res://weaponsystem/weapons/lightgun/lightgun.tscn" id="21_wlm6a"]
-[ext_resource type="Script" uid="uid://fwsjo4jcsxnj" path="res://weaponsystem/weapons/lightgun/lightgun.gd" id="22_wlm6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
 size = Vector2(34, 66)
@@ -118,6 +117,7 @@ texture = ExtResource("14_hq3og")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 0)
 script = ExtResource("15_orckd")
+paction = "hook"
 
 [node name="RayCast2D" type="RayCast2D" parent="grapling hook/grapling" unique_id=1486426993]
 position = Vector2(-1.9999995, -8.742154e-08)
@@ -136,15 +136,17 @@ shape = SubResource("CapsuleShape2D_6kuvt")
 
 [node name="HealthComponent" parent="." unique_id=1210977906 instance=ExtResource("18_6kuvt")]
 
-[node name="weaponshandler" parent="." unique_id=183465439 node_paths=PackedStringArray("weapons") instance=ExtResource("20_0shic")]
-weapons = [NodePath("../HarpoonGun"), NodePath("../Lightgun"), NodePath("../grapling hook/grapling")]
+[node name="weaponshandler" parent="." unique_id=183465439 node_paths=PackedStringArray("weapons", "alwaysactive") instance=ExtResource("20_0shic")]
+weapons = [NodePath("../HarpoonGun"), NodePath("../Lightgun")]
+alwaysactive = [NodePath("../grapling hook/grapling")]
 
 [node name="HarpoonGun" parent="." unique_id=1783020617 instance=ExtResource("21_mbhnd")]
 tweenin = 0.0
-primary_damage = 5.0
+primary_damage = 2.0
+primary_duration = 1.0
+primary_cooldown = 1.0
 
 [node name="Lightgun" parent="." unique_id=57169841 instance=ExtResource("21_wlm6a")]
-script = ExtResource("22_wlm6a")
 tweenout = 0.5
 primary_cooldown = 0.1
 

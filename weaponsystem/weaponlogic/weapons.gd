@@ -26,9 +26,9 @@ class_name Weapon
 @export var special_duration = 0.5
 
 
-var primarytimer = 0.0
-var secondarytimer = 0.0
-var specialtimer = 0.0
+var primarytimer = primary_cooldown
+var secondarytimer = secondary_cooldown
+var specialtimer = special_cooldown
 
 func _process(delta: float) -> void:
 	pass
@@ -39,6 +39,7 @@ func handleprimary(delta):
 		primarytimer += delta
 	elif Input.is_action_just_pressed(paction):
 		print('primary from weapon')
+		print(primarytimer)
 		primarytimer = 0.0
 		_primary(primary_damage, primary_duration)
 func handlesecondary(delta):

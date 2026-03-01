@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var weapons: Array[Weapon]
+
+@export var alwaysactive: Array[Weapon]
 var skey = ""
 var pkey = ""
 var spkey = ""
@@ -42,6 +44,11 @@ func _process(delta: float) -> void:
 	weapons[currentweapon].handleprimary(delta)
 	weapons[currentweapon].handlesecondary(delta)
 	weapons[currentweapon].handlespecial(delta)
+	
+	for i in range(alwaysactive.size()):
+		alwaysactive[i].handleprimary(delta)
+		alwaysactive[i].handlesecondary(delta)
+		alwaysactive[i].handlespecial(delta)
 	
 	if Input.is_action_just_pressed("w1"):
 		currentweapon = 0
