@@ -90,7 +90,6 @@ animations = [{
 position = Vector2(-1, 10)
 script = ExtResource("1_glpr6")
 swimming_amp = 2.4
-kbtime = 0.3
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1441652066]
 position = Vector2(0, 1)
@@ -105,18 +104,11 @@ autoplay = "idle"
 frame_progress = 0.7656351
 script = ExtResource("12_8brn5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=156739510]
-position = Vector2(0, 0.99999845)
-scale = Vector2(0.8, 0.8)
-shape = SubResource("RectangleShape2D_wfnr8")
-debug_color = Color(0.7480362, 0.4134945, 0.54839736, 0.41960785)
-
-[node name="pivot" type="Node2D" parent="." unique_id=2112945148]
 [node name="grapling hook" type="Node2D" parent="." unique_id=2112945148]
 position = Vector2(1.0000191, -7.999997)
 script = ExtResource("13_hq3og")
 
-[node name="Sprite2D" type="Sprite2D" parent="pivot" unique_id=399634108]
+[node name="Sprite2D" type="Sprite2D" parent="grapling hook" unique_id=399634108]
 texture_repeat = 2
 position = Vector2(0, -2)
 rotation = -1.5707964
@@ -125,13 +117,11 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 0)
 script = ExtResource("15_orckd")
 
-[node name="RayCast2D" type="RayCast2D" parent="pivot/Sprite2D" unique_id=1486426993]
+[node name="RayCast2D" type="RayCast2D" parent="grapling hook/Sprite2D" unique_id=1486426993]
 position = Vector2(-1.9999995, -8.742154e-08)
 target_position = Vector2(0, 800)
 
 [node name="trident" type="RigidBody2D" parent="." unique_id=1617694880]
-[connection signal="hooked" from="pivot/Sprite2D" to="." method="_on_sprite_2d_hooked"]
-[node name="trident" type="Node2D" parent="." unique_id=2099051032]
 script = ExtResource("17_6kuvt")
 
 [node name="Sprite2D" type="Sprite2D" parent="trident" unique_id=750268132]
@@ -143,10 +133,5 @@ texture = ExtResource("18_6610h")
 shape = SubResource("CapsuleShape2D_6kuvt")
 
 [node name="HealthComponent" parent="." unique_id=1210977906 instance=ExtResource("18_6kuvt")]
-
-[node name="healthbox" type="CollisionShape2D" parent="." unique_id=47037802]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_pjt0s")
-script = ExtResource("2_orckd")
 
 [connection signal="hooked" from="grapling hook/Sprite2D" to="." method="_on_sprite_2d_hooked"]
