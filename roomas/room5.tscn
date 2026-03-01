@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://8eqtxnrjowjt"]
+
+[ext_resource type="PackedScene" uid="uid://crle1temgkff8" path="res://roomas/room.tscn" id="1_p3lly"]
+
+[node name="room" unique_id=285869251 instance=ExtResource("1_p3lly")]
+
+[node name="entrance" type="Marker2D" parent="entrances" parent_id_path=PackedInt32Array(630004098) index="0" unique_id=1693239025]
+position = Vector2(-40, 8)
+
+[node name="entrance" type="Marker2D" parent="entrances/entrance" index="0" unique_id=1697361466]
+position = Vector2(0, 32)
+
+[node name="TileMap" parent="." index="2" unique_id=239808004]
+layer_0/tile_data = PackedInt32Array(327679, 0, 0, 262145, 0, 0, 262147, 65536, 0, 65539, 65536, 0, 131075, 65536, 0, 3, 65536, 0, -131069, 65536, 0, -131071, 65536, 0, -65537, 65536, 0, -65539, 327680, 0, 327677, 327680, 0)

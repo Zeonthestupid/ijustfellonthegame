@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://2v8uitcuf3d5"]
+
+[ext_resource type="Script" uid="uid://bf3uhwhureupe" path="res://game.gd" id="1_qs2jb"]
+[ext_resource type="Script" uid="uid://bp1qukli2l3am" path="res://roomgen.gd" id="2_lkrhy"]
+[ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="3_p0x72"]
+
+[node name="game" type="Node2D" unique_id=1573397472]
+script = ExtResource("1_qs2jb")
+
+[node name="rooms" type="NavigationObstacle2D" parent="." unique_id=1834871879]
+script = ExtResource("2_lkrhy")
+
+[node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("3_p0x72")]
+position = Vector2(53, 80)
