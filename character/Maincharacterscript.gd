@@ -1,6 +1,10 @@
 extends CharacterBody2D
-@onready var reload: Timer = $hitbox/reload
-
+@onready var reload: Timer = $Timer
+@onready var calm: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var combat: AudioStreamPlayer2D = $AudioStreamPlayer2D2
+var calmmusic = true
+var calmdb = 0.0
+var combdb = -90.0
 
 @export_category("Character params")
 @export_subgroup("Main config")
@@ -24,8 +28,7 @@ extends CharacterBody2D
 @export var kbtime = 1.0
 
 @export_subgroup("oxygen")
-@export var startingoxygen = 200
-@export var oxygenfactor = 1
+
 
 @export var weapons: Array[Node2D]
 @export var currentweapon = 0
@@ -33,7 +36,8 @@ var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var weaponshandler: Node2D = $weaponshandler
-
+var startingoxygen = 200
+var oxygenfactor = 1.0
 var shotangle = 0.0
 var shot = false
 
@@ -69,6 +73,8 @@ func decrease_weapon():
 	currentweapon = (currentweapon - 1) % weapons.size()
 
 func _physics_process(delta):
+	calm.volume_db = calmdb
+	combat.volume_db = combdb
 	startingoxygen -= delta * oxygenfactor
 	print(startingoxygen)
 	var velo = Vector2(0,0)
@@ -82,6 +88,8 @@ func _physics_process(delta):
 		tween.tween_property(self, "power", 0.0, 1.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 		await get_tree().create_timer(0.5).timeout
 		
+	if Input.is_action_just_pressed("ui_accept"):
+		switchaudio()
 	if knockback_timer>0.0:
 		velocity.x = knockback.x * power
 		velocity.y = knockback.y * power
@@ -126,20 +134,31 @@ func updatekbpower(kbpower):
 	power = kbpower
 	
 func take_damage(amount: int) -> void:
-	print(amount)
-	startingoxygen -= amount
+	print("damagetaken")
+	startingoxygen -= 100
+	var x = Vector2(-cos((get_global_mouse_position() - global_position).angle())*kbfactor, -sin((get_global_mouse_position() - global_position).angle())*kbfactor)
+	apply_knockback(x, 0.25, 0.5)
 
 
 
 func PLAYER():
 	pass
 
+func switchaudio():
+	calmmusic = !calmmusic
+	if calmmusic:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "calmdb", 0.0, 0.2)
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(self, "combdb", -40.0, 0.5).set_ease(Tween.EASE_IN)
+	else:
+		var tween2 = get_tree().create_tween()
+		tween2.tween_property(self, "combdb", 0.0, 0.2)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "calmdb", -40.0, 1).set_ease(Tween.EASE_IN)
+		
 
 
-
-func _on_hitbox_take_damage() -> void:
-	print("damagetaken")
-	startingoxygen -= 100
 
 
 func _on_reload_timeout() -> void:

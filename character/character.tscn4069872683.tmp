@@ -96,12 +96,21 @@ height = 58.0
 radius = 9.0
 height = 68.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=286528908 node_paths=PackedStringArray("weapons")]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=286528908]
 position = Vector2(-1, 10)
 collision_mask = 9
 script = ExtResource("1_glpr6")
+speed_mod = null
 swimming_amp = 2.4
-weapons = [NodePath("HarpoonGun")]
+max_speed = null
+clamping_speed = null
+swim_back = null
+heath = null
+kbfactor = null
+kbtime = null
+startingoxygen = null
+oxygenfactor = null
+currentweapon = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=879365669]
 position = Vector2(0.031, 0.646)

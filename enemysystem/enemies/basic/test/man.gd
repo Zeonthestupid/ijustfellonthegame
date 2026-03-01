@@ -66,3 +66,5 @@ func take_damage(amount: int) -> void:
 func _on_health_component_died() -> void:
 	remove_from_group("enemies")
 	pass # Replace with function body.
+func enemy():
+	pass
