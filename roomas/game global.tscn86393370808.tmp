@@ -4,10 +4,29 @@
 [ext_resource type="PackedScene" uid="uid://ge2jm7kyat7s" path="res://roomas/roomgen.tscn" id="3_lkrhy"]
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="3_p0x72"]
 
+[sub_resource type="GDScript" id="GDScript_p0x72"]
+script/source = "extends Node2D
+
+
+rooms = Array[]
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="game" type="Node2D" unique_id=1573397472]
 script = ExtResource("1_qs2jb")
 
 [node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("3_p0x72")]
 position = Vector2(53, 80)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=496013279]
+script = SubResource("GDScript_p0x72")
 
 [node name="roomgen" parent="." unique_id=1039570406 instance=ExtResource("3_lkrhy")]

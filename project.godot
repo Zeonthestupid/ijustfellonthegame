@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ijustfellonthegame"
-run/main_scene="uid://b3u1pilxnnxnw"
+run/main_scene="uid://c7ns42j32k24"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

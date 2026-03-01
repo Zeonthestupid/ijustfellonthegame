@@ -8,6 +8,8 @@
 size = Vector2(20, 4)
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=59364213]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ot0ku")
 impact_particles = ExtResource("2_sp3mi")
 
