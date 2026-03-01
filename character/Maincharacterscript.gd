@@ -1,4 +1,6 @@
 extends CharacterBody2D
+@onready var reload: Timer = $hitbox/reload
+
 
 @export_category("Character params")
 @export_subgroup("Main config")
@@ -12,12 +14,18 @@ extends CharacterBody2D
 @export var swim_back = 0.02
 
 @export_subgroup("characterconf")
-@export var heath = 10.0
+@export var heath = 5.0 
+
+@onready var player := $"../player"
+@onready var health = $HealthComponent
 
 @export_subgroup("kb")
 @export var kbfactor = 1000
 @export var kbtime = 1.0
 
+@export_subgroup("oxygen")
+@export var startingoxygen = 200
+@export var oxygenfactor = 1
 
 @export var weapons: Array[Node2D]
 @export var currentweapon = 0
@@ -61,6 +69,8 @@ func decrease_weapon():
 	currentweapon = (currentweapon - 1) % weapons.size()
 
 func _physics_process(delta):
+	startingoxygen -= delta * oxygenfactor
+	print(startingoxygen)
 	var velo = Vector2(0,0)
 	
 	if Input.is_action_just_pressed("trident_test"):
@@ -81,6 +91,11 @@ func _physics_process(delta):
 		velo = swim(delta, velo)
 		velocity.x = velo.x
 		velocity.y = velo.y
+	
+	if startingoxygen<= 0.0:
+		startingoxygen=0.0
+		Engine.time_scale = 0.2
+		reload.start()
 	
 	move_and_slide()
 
@@ -108,3 +123,23 @@ func apply_knockback(kb, tweenin, tweenout):
 	pass
 func updatekbpower(kbpower):
 	power = kbpower
+	
+func take_damage(amount: int) -> void:
+	print(amount)
+	startingoxygen -= amount
+
+
+
+func PLAYER():
+	pass
+
+
+
+
+func _on_hitbox_take_damage() -> void:
+	print("damagetaken")
+	startingoxygen -= 100
+
+
+func _on_reload_timeout() -> void:
+		get_tree().reload_current_scene()

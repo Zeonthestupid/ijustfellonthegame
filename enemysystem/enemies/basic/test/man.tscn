@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cgm3jgm60owll" path="res://enemysystem/enemies/basic/test/man.gd" id="1_pfr4v"]
 [ext_resource type="Texture2D" uid="uid://byyx4w1pnj6a" path="res://assets/DSC_1856.JPG" id="2_rb5kw"]
 [ext_resource type="PackedScene" uid="uid://dxo40sxjrv0ya" path="res://health_component.tscn" id="3_rb5kw"]
+[ext_resource type="Script" uid="uid://dj63calvjyuxf" path="res://enemysystem/enemies/basic/test/collision_shape_2d.gd" id="3_x34kg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pfr4v"]
 size = Vector2(48, 38)
@@ -21,6 +22,7 @@ texture = ExtResource("2_rb5kw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1574905821]
 shape = SubResource("RectangleShape2D_pfr4v")
+script = ExtResource("3_x34kg")
 
 [node name="HealthComponent" parent="." unique_id=1210977906 instance=ExtResource("3_rb5kw")]
 

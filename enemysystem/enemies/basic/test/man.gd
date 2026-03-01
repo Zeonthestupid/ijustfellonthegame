@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var damage = 5
 
 const SPEED = 200
 var time = 0.0
@@ -56,8 +57,6 @@ func _physics_process(delta: float) -> void:
 		
 
 	move_and_slide()
-
-
 
 func take_damage(amount: int) -> void:
 	print(amount)

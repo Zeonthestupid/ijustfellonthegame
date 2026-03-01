@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://yard5mbvpynv" path="res://assets/gordan 8.png" id="9_6kuvt"]
 [ext_resource type="Texture2D" uid="uid://d2s8xu4rhnvdr" path="res://assets/gordan 10.png" id="10_6610h"]
 [ext_resource type="Texture2D" uid="uid://cn20yipu2ngry" path="res://assets/gordan 9.png" id="11_0shic"]
-[ext_resource type="Script" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
+[ext_resource type="Script" uid="uid://cgtpbbry1886i" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
 [ext_resource type="Texture2D" uid="uid://46d5p7u1yo2o" path="res://assets/rope.png" id="14_hq3og"]
 [ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://weaponsystem/weapons/grappling hook/sprite_2d.gd" id="15_orckd"]
 [ext_resource type="Script" uid="uid://clgw5i5je4df6" path="res://character/trident.gd" id="17_6kuvt"]
@@ -99,6 +99,8 @@ swimming_amp = 2.4
 shape = SubResource("RectangleShape2D_pjt0s")
 script = ExtResource("2_orckd")
 
+[node name="reload" type="Timer" parent="hitbox" unique_id=1244013352]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=879365669]
 position = Vector2(0.031, 0.646)
 sprite_frames = SubResource("SpriteFrames_mbhnd")
@@ -153,4 +155,9 @@ primary_cooldown = 1.0
 tweenout = 0.5
 primary_cooldown = 0.1
 
+[connection signal="take_damage" from="hitbox" to="." method="_on_hitbox_take_damage"]
+[connection signal="timeout" from="hitbox/reload" to="." method="_on_reload_timeout"]
 [connection signal="hooked" from="grapling hook/grapling" to="." method="_on_sprite_2d_hooked"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="timeout" from="HealthComponent/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="HealthComponent/Timer" to="HealthComponent" method="_on_timer_timeout"]

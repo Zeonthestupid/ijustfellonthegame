@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oepk2"]
 size = Vector2(114.75, 78.25)
 
-[sub_resource type="Resource" id="Resource_5w5go"]
+[sub_resource type="Resource" id="Resource_b8hl0"]
 script = ExtResource("4_3t6un")
 spawn_group = "room_1"
 enemy_count = 1
@@ -69,7 +69,7 @@ enemy_scene = ExtResource("6_r02k2")
 position = Vector2(155, -8)
 collision_layer = 2
 collision_mask = 2
-waves = Array[ExtResource("4_3t6un")]([SubResource("Resource_5w5go"), SubResource("Resource_dox6j")])
+waves = Array[ExtResource("4_3t6un")]([SubResource("Resource_b8hl0"), SubResource("Resource_dox6j")])
 delay_between_waves = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnTrigger" unique_id=17003070]
