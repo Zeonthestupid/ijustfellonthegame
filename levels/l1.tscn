@@ -3,7 +3,6 @@
 [ext_resource type="TileSet" uid="uid://ryeykcn6vwrf" path="res://assets/tileset.tres" id="1_nfx66"]
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="2_rpj1j"]
 [ext_resource type="PackedScene" uid="uid://cdfm8gnnxa8gq" path="res://enemysystem/enemies/basic/test/man.tscn" id="3_g0ed0"]
-[ext_resource type="PackedScene" path="res://ui/oxygen_refresh.tscn" id="4_yaplw"]
 
 [node name="L1" type="Node2D" unique_id=1361563644]
 

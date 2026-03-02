@@ -193,20 +193,21 @@ offset_right = 52.0
 offset_bottom = -34.0
 scale = Vector2(0.7197596, 0.9474676)
 text = "oxygen: 10"
+
 [node name="reload" type="Timer" parent="." unique_id=415066857]
 wait_time = 0.5
 ignore_time_scale = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=653636744]
-position = Vector2(0, -8)
-collision_layer = 0
+[node name="Area2D" type="Area2D" parent="." unique_id=1981234392]
+collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1468765236]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1468765236]
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_5s0vb")
 script = ExtResource("25_kxp0i")
 
 [connection signal="hooked" from="grapling hook/grapling" to="." method="_on_sprite_2d_hooked"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="body_entered" from="damageHitbox" to="damageHitbox" method="_on_body_entered"]
-[connection signal="music_change" from="StaticBody2D/CollisionShape2D2" to="." method="_on_collision_shape_2d_2_music_change"]
+[connection signal="music_change" from="Area2D/CollisionShape2D2" to="." method="_on_collision_shape_2d_2_music_change"]
