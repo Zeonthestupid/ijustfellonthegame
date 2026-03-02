@@ -18,12 +18,17 @@ position = Vector2(148, -199)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=2038917112]
 position = Vector2(-1, 1)
-zoom = Vector2(1.815, 1.815)
+zoom = Vector2(2.565, 2.565)
 limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 5.525
 
 [node name="basic enemy" parent="." unique_id=189267909 instance=ExtResource("3_g0ed0")]
+position = Vector2(504, -369)
+
+[node name="basic enemy2" parent="." unique_id=1699273477 instance=ExtResource("3_g0ed0")]
+position = Vector2(-119.00001, -376)
+scale = Vector2(10.6751175, 0.36123735)
 position = Vector2(1, -152)
 
 [node name="oxygen refresh" parent="." unique_id=1122060950 instance=ExtResource("4_yaplw")]

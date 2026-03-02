@@ -186,6 +186,13 @@ script = ExtResource("25_yn8gt")
 [node name="Timer" type="Timer" parent="." unique_id=1921077338]
 wait_time = 250.0
 
+[node name="Label" type="Label" parent="." unique_id=1164011321]
+offset_left = -31.0
+offset_top = -57.0
+offset_right = 52.0
+offset_bottom = -34.0
+scale = Vector2(0.7197596, 0.9474676)
+text = "oxygen: 10"
 [node name="reload" type="Timer" parent="." unique_id=415066857]
 wait_time = 0.5
 ignore_time_scale = true
