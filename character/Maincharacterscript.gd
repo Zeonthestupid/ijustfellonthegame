@@ -45,6 +45,9 @@ var time = 0.0
 
 var power = 0.0
 
+var tridenttime = 2.5
+
+var tridentcooldown = 2.0
 
 func _ready():
 	weaponshandler.knockback.connect(_apply_knockback)
@@ -73,13 +76,15 @@ func decrease_weapon():
 	currentweapon = (currentweapon - 1) % weapons.size()
 
 func _physics_process(delta):
+	tridenttime -= delta
 	calm.volume_db = calmdb
 	combat.volume_db = combdb
 	startingoxygen -= delta * oxygenfactor
 	print(startingoxygen)
 	var velo = Vector2(0,0)
 	
-	if Input.is_action_just_pressed("trident_test"):
+	if Input.is_action_just_pressed("trident_test") and tridenttime <= 0:
+		tridenttime = tridentcooldown
 		knockback = Vector2(cos((get_global_mouse_position() - global_position).angle())*kbfactor, sin((get_global_mouse_position() - global_position).angle())*kbfactor)
 		print(knockback)
 		knockback_timer = kbtime
