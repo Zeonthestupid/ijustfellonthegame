@@ -22,12 +22,6 @@ limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 5.525
 
-[node name="oxygen refresh" parent="." unique_id=1122060950 instance=ExtResource("4_yaplw")]
-position = Vector2(275, -100)
-
-[node name="oxygen refresh2" parent="." unique_id=1834612510 instance=ExtResource("4_yaplw")]
-position = Vector2(515, -324)
-
 [node name="basic enemy" parent="." unique_id=189267909 instance=ExtResource("3_g0ed0")]
 position = Vector2(-186, -470)
 
