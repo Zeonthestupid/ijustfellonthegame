@@ -18,3 +18,6 @@ script = ExtResource("1_o1pe0")
 position = Vector2(1.847744e-06, -0.5)
 scale = Vector2(1, 0.984375)
 texture = ExtResource("2_srv71")
+
+[node name="Timer" type="Timer" parent="." unique_id=848657851]
+wait_time = 15.0

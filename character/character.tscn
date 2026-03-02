@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://yard5mbvpynv" path="res://assets/gordan 8.png" id="9_6kuvt"]
 [ext_resource type="Texture2D" uid="uid://d2s8xu4rhnvdr" path="res://assets/gordan 10.png" id="10_6610h"]
 [ext_resource type="Texture2D" uid="uid://cn20yipu2ngry" path="res://assets/gordan 9.png" id="11_0shic"]
-[ext_resource type="Script" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
+[ext_resource type="Script" uid="uid://cgtpbbry1886i" path="res://character/animated_sprite_2d.gd" id="12_8brn5"]
 [ext_resource type="Texture2D" uid="uid://46d5p7u1yo2o" path="res://assets/rope.png" id="14_hq3og"]
 [ext_resource type="Script" uid="uid://4xtrw6wqcqay" path="res://weaponsystem/weapons/grappling hook/sprite_2d.gd" id="15_orckd"]
 [ext_resource type="Script" uid="uid://clgw5i5je4df6" path="res://character/trident.gd" id="17_6kuvt"]
@@ -23,7 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://cnyerj2a0kmfq" path="res://weaponsystem/weapons/lightgun/lightgun.tscn" id="21_wlm6a"]
 [ext_resource type="AudioStream" uid="uid://iuclwn5dpx1y" path="res://assets/underwater theme calm.wav" id="23_c0nog"]
 [ext_resource type="AudioStream" uid="uid://b6yhhyebnoqhv" path="res://assets/underwater theme fight.wav" id="24_5s0vb"]
-[ext_resource type="Script" uid="uid://cbs0c7nei853" path="res://character/damagehitbox.gd" id="25_4ekbm"]
+[ext_resource type="Script" path="res://character/damagehitbox.gd" id="25_4ekbm"]
+[ext_resource type="Script" uid="uid://ckj0wvd1mey6f" path="res://character/collision_shape_2d_2.gd" id="25_kxp0i"]
+[ext_resource type="Script" uid="uid://bimygt7bl4hwh" path="res://character/collision_shape_2d.gd" id="25_yn8gt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbhnd"]
 animations = [{
@@ -94,7 +96,10 @@ height = 58.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ekbm"]
 radius = 9.0
-height = 68.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5s0vb"]
+radius = 147.31259
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=286528908 node_paths=PackedStringArray("weapons")]
 position = Vector2(-1, 10)
@@ -176,6 +181,7 @@ shape = SubResource("CapsuleShape2D_5s0vb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1153354691]
 shape = SubResource("CapsuleShape2D_4ekbm")
 debug_color = Color(0.66274303, 0.4217271, 0.7632646, 0.41960785)
+script = ExtResource("25_yn8gt")
 
 [node name="Timer" type="Timer" parent="." unique_id=1921077338]
 wait_time = 250.0
@@ -187,7 +193,20 @@ offset_right = 52.0
 offset_bottom = -34.0
 scale = Vector2(0.7197596, 0.9474676)
 text = "oxygen: 10"
+[node name="reload" type="Timer" parent="." unique_id=415066857]
+wait_time = 0.5
+ignore_time_scale = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=653636744]
+position = Vector2(0, -8)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1468765236]
+shape = SubResource("CircleShape2D_5s0vb")
+script = ExtResource("25_kxp0i")
 
 [connection signal="hooked" from="grapling hook/grapling" to="." method="_on_sprite_2d_hooked"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="body_entered" from="damageHitbox" to="damageHitbox" method="_on_body_entered"]
+[connection signal="music_change" from="StaticBody2D/CollisionShape2D2" to="." method="_on_collision_shape_2d_2_music_change"]
