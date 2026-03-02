@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var reload: Timer = $Timer
+@onready var reload: Timer = $reload
 @onready var calm: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var combat: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 var calmmusic = true
@@ -88,8 +88,6 @@ func _physics_process(delta):
 		tween.tween_property(self, "power", 0.0, 1.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 		await get_tree().create_timer(0.5).timeout
 		
-	if Input.is_action_just_pressed("ui_accept"):
-		switchaudio()
 	if knockback_timer>0.0:
 		velocity.x = knockback.x * power
 		velocity.y = knockback.y * power
@@ -105,6 +103,11 @@ func _physics_process(delta):
 		startingoxygen=0.0
 		Engine.time_scale = 0.2
 		reload.start()
+		
+	if Global.Oxygen_recharge == true:
+		startingoxygen = startingoxygen + 100
+		
+	
 	
 	move_and_slide()
 
@@ -163,3 +166,7 @@ func switchaudio():
 
 func _on_reload_timeout() -> void:
 		get_tree().reload_current_scene()
+
+
+func _on_collision_shape_2d_2_music_change() -> void:
+	switchaudio()
