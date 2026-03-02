@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://b6yhhyebnoqhv" path="res://assets/underwater theme fight.wav" id="24_5s0vb"]
 [ext_resource type="Script" path="res://character/damagehitbox.gd" id="25_4ekbm"]
 [ext_resource type="Script" uid="uid://ckj0wvd1mey6f" path="res://character/collision_shape_2d_2.gd" id="25_kxp0i"]
+[ext_resource type="Script" uid="uid://bimygt7bl4hwh" path="res://character/collision_shape_2d.gd" id="25_yn8gt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbhnd"]
 animations = [{
@@ -180,12 +181,14 @@ shape = SubResource("CapsuleShape2D_5s0vb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1153354691]
 shape = SubResource("CapsuleShape2D_4ekbm")
 debug_color = Color(0.66274303, 0.4217271, 0.7632646, 0.41960785)
+script = ExtResource("25_yn8gt")
 
 [node name="Timer" type="Timer" parent="." unique_id=1921077338]
 wait_time = 250.0
 
 [node name="reload" type="Timer" parent="." unique_id=415066857]
 wait_time = 0.5
+ignore_time_scale = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=653636744]
 position = Vector2(0, -8)

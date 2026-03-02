@@ -110,7 +110,7 @@ func _physics_process(delta):
 		reload.start()
 		
 	if Global.Oxygen_recharge == true:
-		startingoxygen = startingoxygen + 100
+		startingoxygen += startingoxygen + 100
 		
 	
 	
