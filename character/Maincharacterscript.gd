@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var reload: Timer = $Timer
 @onready var calm: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var combat: AudioStreamPlayer2D = $AudioStreamPlayer2D2
+@onready var label: Label = $Label
 var calmmusic = true
 var calmdb = 0.0
 var combdb = -90.0
@@ -81,6 +82,7 @@ func _physics_process(delta):
 	combat.volume_db = combdb
 	startingoxygen -= delta * oxygenfactor
 	print(startingoxygen)
+	label.text = "Oxygen: " + str(round(startingoxygen))
 	var velo = Vector2(0,0)
 	
 	if Input.is_action_just_pressed("trident_test") and tridenttime <= 0:
@@ -163,7 +165,8 @@ func switchaudio():
 		tween.tween_property(self, "calmdb", -40.0, 1).set_ease(Tween.EASE_IN)
 		
 
-
+func heal() -> void:
+	startingoxygen += 10
 
 
 func _on_reload_timeout() -> void:

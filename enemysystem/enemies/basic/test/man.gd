@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var damage = 5
 
-const SPEED = 200
+const SPEED = 250
 var time = 0.0
 var rng = RandomNumberGenerator.new()
 var power = 0.0
@@ -17,7 +17,7 @@ var at3 = false
 func _ready():
 	add_to_group("enemies")
 func attack():
-	var x = rng.randi_range(1, 3)
+	var x = rng.randi_range(1, 2)
 	if x == 2:
 		at2 = true
 		pass
@@ -65,6 +65,7 @@ func take_damage(amount: int) -> void:
 
 func _on_health_component_died() -> void:
 	remove_from_group("enemies")
+	player.heal()
 	pass # Replace with function body.
 func enemy():
 	pass
