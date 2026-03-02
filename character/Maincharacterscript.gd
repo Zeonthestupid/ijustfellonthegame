@@ -106,12 +106,15 @@ func _physics_process(delta):
 	
 	if startingoxygen<= 0.0:
 		startingoxygen=0.0
-		Engine.time_scale = 0.2
+		Engine.time_scale = 0.0
 		reload.start()
 		
 	if Global.Oxygen_recharge == true:
 		startingoxygen += startingoxygen + 100
 		
+		
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 	
 	
 	move_and_slide()
