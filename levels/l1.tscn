@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://ryeykcn6vwrf" path="res://assets/tileset.tres" id="1_nfx66"]
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="2_rpj1j"]
 [ext_resource type="PackedScene" uid="uid://cdfm8gnnxa8gq" path="res://enemysystem/enemies/basic/test/man.tscn" id="3_g0ed0"]
+[ext_resource type="Texture2D" uid="uid://bps10p25tfigf" path="res://assets/background.png" id="3_yaplw"]
 
 [node name="L1" type="Node2D" unique_id=1361563644]
 
@@ -21,6 +22,11 @@ zoom = Vector2(2.565, 2.565)
 limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 5.525
+
+[node name="Background" type="Sprite2D" parent="player/Camera2D" unique_id=1668487194]
+z_index = -10
+position = Vector2(3, 2)
+texture = ExtResource("3_yaplw")
 
 [node name="basic enemy" parent="." unique_id=189267909 instance=ExtResource("3_g0ed0")]
 position = Vector2(-186, -470)
