@@ -5,7 +5,7 @@ extends RigidBody2D
 @export var SPEED: int = 3000
 @export var impact_particles: PackedScene
 var time = 0
-
+var cooldowntime = 2.5
 func _ready() -> void:
 	time = 0
 	pass # Replace with function body.
