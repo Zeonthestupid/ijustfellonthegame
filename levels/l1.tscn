@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://ryeykcn6vwrf" path="res://assets/tileset.tres" id="1_nfx66"]
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="2_rpj1j"]
 [ext_resource type="PackedScene" uid="uid://cdfm8gnnxa8gq" path="res://enemysystem/enemies/basic/test/man.tscn" id="3_g0ed0"]
-[ext_resource type="PackedScene" uid="uid://dgyx83jjupjru" path="res://ui/oxygen_refresh.tscn" id="4_yaplw"]
+[ext_resource type="PackedScene" path="res://ui/oxygen_refresh.tscn" id="4_yaplw"]
 
 [node name="L1" type="Node2D" unique_id=1361563644]
 
@@ -23,16 +23,62 @@ limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 5.525
 
-[node name="basic enemy" parent="." unique_id=189267909 instance=ExtResource("3_g0ed0")]
-position = Vector2(504, -369)
-
-[node name="basic enemy2" parent="." unique_id=1699273477 instance=ExtResource("3_g0ed0")]
-position = Vector2(-119.00001, -376)
-scale = Vector2(10.6751175, 0.36123735)
-position = Vector2(1, -152)
-
 [node name="oxygen refresh" parent="." unique_id=1122060950 instance=ExtResource("4_yaplw")]
 position = Vector2(275, -100)
 
 [node name="oxygen refresh2" parent="." unique_id=1834612510 instance=ExtResource("4_yaplw")]
 position = Vector2(515, -324)
+
+[node name="basic enemy" parent="." unique_id=189267909 instance=ExtResource("3_g0ed0")]
+position = Vector2(-186, -470)
+
+[node name="basic enemy2" parent="." unique_id=77383741 instance=ExtResource("3_g0ed0")]
+position = Vector2(-461.00003, -98)
+
+[node name="basic enemy3" parent="." unique_id=885754191 instance=ExtResource("3_g0ed0")]
+position = Vector2(-311, -170)
+
+[node name="basic enemy4" parent="." unique_id=2022229411 instance=ExtResource("3_g0ed0")]
+position = Vector2(51, 194)
+
+[node name="basic enemy5" parent="." unique_id=1437305446 instance=ExtResource("3_g0ed0")]
+position = Vector2(366, 250)
+
+[node name="basic enemy6" parent="." unique_id=1273997299 instance=ExtResource("3_g0ed0")]
+position = Vector2(-136, 468)
+
+[node name="basic enemy7" parent="." unique_id=557942832 instance=ExtResource("3_g0ed0")]
+position = Vector2(128, 694)
+
+[node name="basic enemy8" parent="." unique_id=2031814171 instance=ExtResource("3_g0ed0")]
+position = Vector2(250, 628)
+
+[node name="basic enemy9" parent="." unique_id=1296798865 instance=ExtResource("3_g0ed0")]
+position = Vector2(826, 343)
+
+[node name="basic enemy10" parent="." unique_id=1773297690 instance=ExtResource("3_g0ed0")]
+position = Vector2(1434, 692)
+
+[node name="basic enemy11" parent="." unique_id=906722402 instance=ExtResource("3_g0ed0")]
+position = Vector2(1384, 251)
+
+[node name="basic enemy12" parent="." unique_id=781047520 instance=ExtResource("3_g0ed0")]
+position = Vector2(1371, -49)
+
+[node name="basic enemy13" parent="." unique_id=758943202 instance=ExtResource("3_g0ed0")]
+position = Vector2(1058, -373)
+
+[node name="basic enemy14" parent="." unique_id=787504184 instance=ExtResource("3_g0ed0")]
+position = Vector2(1670, -463)
+
+[node name="basic enemy15" parent="." unique_id=1616717238 instance=ExtResource("3_g0ed0")]
+position = Vector2(2016, -207)
+
+[node name="basic enemy16" parent="." unique_id=1217088641 instance=ExtResource("3_g0ed0")]
+position = Vector2(1897, 76)
+
+[node name="basic enemy17" parent="." unique_id=660443701 instance=ExtResource("3_g0ed0")]
+position = Vector2(1910, 296)
+
+[node name="basic enemy18" parent="." unique_id=1876346048 instance=ExtResource("3_g0ed0")]
+position = Vector2(2077, 600)
