@@ -4,6 +4,30 @@
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="2_rpj1j"]
 [ext_resource type="PackedScene" uid="uid://cdfm8gnnxa8gq" path="res://enemysystem/enemies/basic/test/man.tscn" id="3_g0ed0"]
 [ext_resource type="Texture2D" uid="uid://bps10p25tfigf" path="res://assets/background.png" id="3_yaplw"]
+[ext_resource type="PackedScene" uid="uid://c2536k2sai4an" path="res://enemysystem/spawnerlogic/enemy_spawner.tscn" id="5_recnm"]
+[ext_resource type="PackedScene" uid="uid://7c6m4f4oxyhi" path="res://hitparticle.tscn" id="6_j4vdj"]
+[ext_resource type="PackedScene" uid="uid://8i0c00le1m1h" path="res://enemysystem/spawnerlogic/spawn_trigger.tscn" id="7_it7j0"]
+[ext_resource type="Script" uid="uid://b3lxqriifx870" path="res://enemysystem/spawnerlogic/scripts/spawnwave.gd" id="8_dh2ny"]
+
+[sub_resource type="Resource" id="Resource_gp6jv"]
+script = ExtResource("8_dh2ny")
+spawn_group = "wav1"
+enemy_count = 1
+metadata/_custom_type_script = "uid://b3lxqriifx870"
+
+[sub_resource type="Resource" id="Resource_swvge"]
+script = ExtResource("8_dh2ny")
+spawn_group = "wav1"
+enemy_count = 3
+metadata/_custom_type_script = "uid://b3lxqriifx870"
+
+[sub_resource type="Resource" id="Resource_2wrwi"]
+script = ExtResource("8_dh2ny")
+spawn_group = "wav1"
+metadata/_custom_type_script = "uid://b3lxqriifx870"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f0grw"]
+radius = 236.17143
 
 [node name="L1" type="Node2D" unique_id=1361563644]
 
@@ -82,3 +106,60 @@ position = Vector2(1910, 296)
 
 [node name="basic enemy18" parent="." unique_id=1876346048 instance=ExtResource("3_g0ed0")]
 position = Vector2(2077, 600)
+
+[node name="EnemySpawner" parent="." unique_id=257321240 groups=["wav1"] instance=ExtResource("5_recnm")]
+position = Vector2(526, -430)
+enemy_scene = ExtResource("3_g0ed0")
+spawn_particles = ExtResource("6_j4vdj")
+
+[node name="EnemySpawner2" parent="." unique_id=1090759978 groups=["wav1"] instance=ExtResource("5_recnm")]
+position = Vector2(781, -26)
+enemy_scene = ExtResource("3_g0ed0")
+spawn_particles = ExtResource("6_j4vdj")
+
+[node name="EnemySpawner3" parent="." unique_id=1582606506 groups=["wav1"] instance=ExtResource("5_recnm")]
+position = Vector2(181, 446)
+enemy_scene = ExtResource("3_g0ed0")
+spawn_particles = ExtResource("6_j4vdj")
+
+[node name="EnemySpawner4" parent="." unique_id=1325069675 groups=["wav1"] instance=ExtResource("5_recnm")]
+position = Vector2(1294, 676)
+enemy_scene = ExtResource("3_g0ed0")
+spawn_particles = ExtResource("6_j4vdj")
+
+[node name="EnemySpawner5" parent="." unique_id=121734357 groups=["wav1"] instance=ExtResource("5_recnm")]
+position = Vector2(1783, 269)
+enemy_scene = ExtResource("3_g0ed0")
+spawn_particles = ExtResource("6_j4vdj")
+
+[node name="EnemySpawner6" parent="." unique_id=318397229 groups=["wav1"] instance=ExtResource("5_recnm")]
+position = Vector2(1577, -320)
+enemy_scene = ExtResource("3_g0ed0")
+spawn_particles = ExtResource("6_j4vdj")
+
+[node name="SpawnTrigger" parent="." unique_id=61985081 instance=ExtResource("7_it7j0")]
+position = Vector2(926, 503)
+rotation = -3.0892677
+waves = Array[ExtResource("8_dh2ny")]([SubResource("Resource_gp6jv"), SubResource("Resource_swvge"), SubResource("Resource_2wrwi")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnTrigger" unique_id=1833748003]
+position = Vector2(-4.62705, 7.251926)
+shape = SubResource("CircleShape2D_f0grw")
+
+[node name="SpawnTrigger2" parent="." unique_id=37626101 instance=ExtResource("7_it7j0")]
+position = Vector2(1811, -227)
+rotation = -3.0892677
+waves = Array[ExtResource("8_dh2ny")]([SubResource("Resource_gp6jv"), SubResource("Resource_swvge"), SubResource("Resource_2wrwi")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnTrigger2" unique_id=1334793647]
+position = Vector2(-4.62705, 7.251926)
+shape = SubResource("CircleShape2D_f0grw")
+
+[node name="SpawnTrigger3" parent="." unique_id=1699641169 instance=ExtResource("7_it7j0")]
+position = Vector2(568.9999, -337)
+rotation = -3.0892677
+waves = Array[ExtResource("8_dh2ny")]([SubResource("Resource_gp6jv"), SubResource("Resource_swvge"), SubResource("Resource_2wrwi")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnTrigger3" unique_id=35767531]
+position = Vector2(-4.62705, 7.251926)
+shape = SubResource("CircleShape2D_f0grw")
