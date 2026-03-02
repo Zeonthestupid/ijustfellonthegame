@@ -142,7 +142,7 @@ func updatekbpower(kbpower):
 	
 func take_damage(amount: int) -> void:
 	print("damagetaken")
-	startingoxygen -= 100
+	startingoxygen -= amount
 	var x = Vector2(-cos((get_global_mouse_position() - global_position).angle())*kbfactor, -sin((get_global_mouse_position() - global_position).angle())*kbfactor)
 	apply_knockback(x, 0.25, 0.5)
 

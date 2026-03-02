@@ -3,7 +3,6 @@
 [ext_resource type="TileSet" uid="uid://ryeykcn6vwrf" path="res://assets/tileset.tres" id="1_nfx66"]
 [ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="2_rpj1j"]
 [ext_resource type="PackedScene" uid="uid://cdfm8gnnxa8gq" path="res://enemysystem/enemies/basic/test/man.tscn" id="3_g0ed0"]
-[ext_resource type="PackedScene" uid="uid://drmk82vlm73og" path="res://enemysystem/enemies/newai/dfgh.tscn" id="4_yaplw"]
 
 [node name="L1" type="Node2D" unique_id=1361563644]
 
@@ -24,7 +23,8 @@ position_smoothing_enabled = true
 position_smoothing_speed = 5.525
 
 [node name="basic enemy" parent="." unique_id=189267909 instance=ExtResource("3_g0ed0")]
-position = Vector2(-389, -147)
+position = Vector2(504, -369)
 
-[node name="Dfgh" parent="." unique_id=285410421 instance=ExtResource("4_yaplw")]
-position = Vector2(253, -98)
+[node name="basic enemy2" parent="." unique_id=1699273477 instance=ExtResource("3_g0ed0")]
+position = Vector2(-119.00001, -376)
+scale = Vector2(10.6751175, 0.36123735)

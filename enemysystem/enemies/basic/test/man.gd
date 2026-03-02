@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var damage = 5
+@export var damage = 15
 
 const SPEED = 250
 var time = 0.0
