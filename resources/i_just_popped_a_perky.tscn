@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cltf5ksqo8pa1"]
+
+[ext_resource type="PackedScene" uid="uid://u32ad72no8xc" path="res://character/character.tscn" id="1_rggi8"]
+[ext_resource type="PackedScene" uid="uid://2dvr1kfksylq" path="res://perks/perks.tscn" id="2_5v4nd"]
+
+[node name="IJustPoppedAPerky" type="Node2D" unique_id=1533076320]
+
+[node name="CharacterBody2D" parent="." unique_id=286528908 instance=ExtResource("1_rggi8")]
+position = Vector2(-6, 1)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=11474035]
+position = Vector2(3, -1)
+
+[node name="Perks" parent="." unique_id=1510226965 instance=ExtResource("2_5v4nd")]
+position = Vector2(158, 0)

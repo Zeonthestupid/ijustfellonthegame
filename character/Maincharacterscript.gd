@@ -1,3 +1,5 @@
+class_name Player
+
 extends CharacterBody2D
 @onready var reload: Timer = $reload
 @onready var calm: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -49,6 +51,8 @@ var power = 0.0
 var tridenttime = 2.5
 
 var tridentcooldown = 2.0
+
+var upgrades : Array[BasePlayerUpgrade] = []
 
 func _ready():
 	weaponshandler.knockback.connect(_apply_knockback)
@@ -181,3 +185,5 @@ func _on_reload_timeout() -> void:
 
 func _on_collision_shape_2d_2_music_change() -> void:
 	switchaudio()
+	
+	

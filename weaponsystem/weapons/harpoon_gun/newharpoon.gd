@@ -8,6 +8,8 @@ signal harpoon_shot(rotation)
 # Called when the node enters the scene tree for the first time.
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
+@onready var player : Player = get_owner()
+
 func _ready() -> void:
 	pass # Replace with function body.
 var time = 0.0
@@ -32,6 +34,7 @@ func _primary(pw, cd):
 	emit_signal("harpoon_shot", rotation_degrees)
 	var x = Vector2(-cos((get_global_mouse_position() - global_position).angle())*kbfactor, -sin((get_global_mouse_position() - global_position).angle())*kbfactor)
 	get_parent().apply_knockback(x, tweenin, tweenout)
+	
 func _secondary(pw, cd):
 	pass
 

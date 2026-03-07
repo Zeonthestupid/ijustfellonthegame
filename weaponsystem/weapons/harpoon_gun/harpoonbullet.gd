@@ -1,3 +1,4 @@
+class_name Bullet
 extends RigidBody2D
 @export var damage = 5
 @export var SPEED: int = 6000

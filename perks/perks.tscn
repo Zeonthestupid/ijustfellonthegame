@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://2dvr1kfksylq"]
+
+[ext_resource type="Script" uid="uid://65wbe5uyr3j" path="res://perks/perks.gd" id="1_dh7wn"]
+[ext_resource type="Resource" uid="uid://bhf2ikcn02hec" path="res://resources/DashUpgrade.tres" id="3_1xwyx"]
+[ext_resource type="Texture2D" uid="uid://0v6d4w7008gq" path="res://assets/dash buff.png" id="3_xadbp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xw238"]
+
+[node name="Perks" type="Area2D" unique_id=1510226965 node_paths=PackedStringArray("upgrade_label", "sprite")]
+script = ExtResource("1_dh7wn")
+upgrade_label = NodePath("Label")
+sprite = NodePath("CollisionShape2D/Sprite2D")
+player_strategy = ExtResource("3_1xwyx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1770533899]
+shape = SubResource("CircleShape2D_xw238")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1428647657]
+texture = ExtResource("3_xadbp")
+
+[node name="Label" type="Label" parent="." unique_id=184048799]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Dash Distance"
