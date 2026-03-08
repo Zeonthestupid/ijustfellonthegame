@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cgxo6lhr54gno"]
+
+[ext_resource type="Script" uid="uid://pkralsu0brrs" path="res://V2/Character/player.gd" id="1_4tuht"]
+[ext_resource type="PackedScene" uid="uid://y4ch1b25tg7o" path="res://V2/Components/health_component.tscn" id="2_6ykjt"]
+[ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://V2/icon.svg" id="2_7mpc7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjdfx"]
+radius = 9.0
+height = 50.0
+
+[node name="player" type="CharacterBody2D" unique_id=637462645]
+script = ExtResource("1_4tuht")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=640407650]
+texture = ExtResource("2_7mpc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=869113532]
+visible = false
+shape = SubResource("CapsuleShape2D_cjdfx")
+debug_color = Color(0.66274303, 0.4217271, 0.7632646, 0.41960785)
+
+[node name="HealthComponent" parent="." unique_id=1927231805 instance=ExtResource("2_6ykjt")]

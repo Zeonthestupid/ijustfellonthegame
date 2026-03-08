@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://crle1temgkff8"]
+
+[ext_resource type="TileSet" uid="uid://ryeykcn6vwrf" path="res://V1/assets/tileset.tres" id="1_7hjdf"]
+[ext_resource type="Script" uid="uid://bpd4ytrg65vtm" path="res://V1/roomas/room.gd" id="1_rwlp7"]
+
+[node name="room" type="Node2D" unique_id=285869251]
+script = ExtResource("1_rwlp7")
+
+[node name="entrances" type="Node2D" parent="." unique_id=630004098]
+
+[node name="enemy spawns" type="Node2D" parent="." unique_id=722004494]
+
+[node name="TileMap" type="TileMap" parent="." unique_id=239808004]
+tile_set = ExtResource("1_7hjdf")
+rendering_quadrant_size = 32
+format = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=344921022]

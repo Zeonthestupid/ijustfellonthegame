@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dgyx83jjupjru"]
+
+[ext_resource type="Script" uid="uid://bpjoyqsquc7ba" path="res://V1/collision_shape_2d.gd" id="1_o1pe0"]
+[ext_resource type="Texture2D" uid="uid://da6b8vjs20udl" path="res://V1/assets/bublke.png" id="2_srv71"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_srv71"]
+radius = 31.257
+
+[node name="oxygen refresh" type="Node2D" unique_id=1122060950]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1481677174]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=517222408]
+shape = SubResource("CircleShape2D_srv71")
+script = ExtResource("1_o1pe0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1682243271]
+position = Vector2(1.847744e-06, -0.5)
+scale = Vector2(1, 0.984375)
+texture = ExtResource("2_srv71")
+
+[node name="Timer" type="Timer" parent="." unique_id=848657851]
+wait_time = 15.0

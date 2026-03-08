@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b3e5jkfes17vm"]
+
+[ext_resource type="PackedScene" uid="uid://crle1temgkff8" path="res://V1/roomas/room.tscn" id="1_orvq3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a40jk"]
+size = Vector2(20, 66)
+
+[node name="room" unique_id=285869251 instance=ExtResource("1_orvq3")]
+
+[node name="Marker2D" type="Marker2D" parent="entrances" parent_id_path=PackedInt32Array(630004098) index="0" unique_id=659574207]
+position = Vector2(-24, -8)
+
+[node name="Marker2D2" type="Marker2D" parent="entrances" parent_id_path=PackedInt32Array(630004098) index="1" unique_id=81365189]
+position = Vector2(-24, 24)
+
+[node name="TileMap" parent="." index="2" unique_id=239808004]
+layer_0/tile_data = PackedInt32Array(196608, 0, 0, 262142, 327680, 0, -131074, 327680, 0, -196608, 65536, 0, -196606, 65536, 0, -196604, 65536, 0, -196602, 65536, 0, -196600, 65536, 0, -196598, 65536, 0, -196596, 65536, 0, -196594, 65536, 0, -65522, 65536, 0, 65550, 65536, 0, 196622, 65536, 0, 327694, 65536, 0, 458766, 65536, 0, 196610, 0, 0, 196612, 0, 0, 196614, 0, 0, 196616, 0, 0, 327688, 65536, 0, 458760, 65536, 0, 589832, 327680, 0, 589838, 327680, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(344921022) index="0" unique_id=1328666357]
+position = Vector2(-24, 8)
+shape = SubResource("RectangleShape2D_a40jk")

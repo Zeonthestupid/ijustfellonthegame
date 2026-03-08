@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://csnw0dat8l5rt"]
+
+[ext_resource type="PackedScene" uid="uid://cgxo6lhr54gno" path="res://V2/Character/player.tscn" id="1_ysgie"]
+[ext_resource type="PackedScene" uid="uid://d3cpg7h6yg880" path="res://V2/Components/AttackSystem/attack.tscn" id="2_q6wqu"]
+[ext_resource type="Script" uid="uid://qx74o60dvpsm" path="res://V2/Components/AttackSystem/meleeAttacks/melee_attack.gd" id="3_ncm35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncm35"]
+radius = 201.00995
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysgie"]
+size = Vector2(1522, 472)
+
+[node name="Woah" type="Node2D" unique_id=804049609]
+
+[node name="player" parent="." unique_id=637462645 instance=ExtResource("1_ysgie")]
+max_run_speed = null
+run_acceleration_time = null
+run_deceleration_time = null
+player_starting_speed = null
+max_jump_speed = null
+gravity_deceleration_factor = null
+jump_up = null
+jump_down = null
+fast_fall_multiplier = null
+coyote_frames = null
+
+[node name="Base_Attack" parent="player" unique_id=1619856032 instance=ExtResource("2_q6wqu")]
+script = ExtResource("3_ncm35")
+
+[node name="Area2D" type="Area2D" parent="player/Base_Attack" unique_id=778974311]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Base_Attack/Area2D" unique_id=27783151]
+position = Vector2(143, 0)
+shape = SubResource("CircleShape2D_ncm35")
+debug_color = Color(0.38303596, 0.55677176, 0.69928885, 0.41960785)
+
+[node name="player2" parent="." unique_id=24944220 groups=["enemy"] instance=ExtResource("1_ysgie")]
+position = Vector2(195, -154)
+script = null
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1371990053]
+position = Vector2(-41, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1027224288]
+position = Vector2(531, -309)
+shape = SubResource("RectangleShape2D_ysgie")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1296862650]
+zoom = Vector2(0.435, 0.435)

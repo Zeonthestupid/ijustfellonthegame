@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bndbw18a71vsv"]
+
+[ext_resource type="Texture2D" uid="uid://qgapywwanmw6" path="res://V1/assets/harhar.png" id="1_y5oni"]
+[ext_resource type="Script" uid="uid://bapry5e0le2r" path="res://V1/weapon_sprite.gd" id="2_340uc"]
+
+[node name="trident" type="Node2D" unique_id=356059259]
+
+[node name="weapon sprite" type="Sprite2D" parent="." unique_id=32900672]
+position = Vector2(3, -2)
+scale = Vector2(0.27236843, 0.09390244)
+texture = ExtResource("1_y5oni")
+script = ExtResource("2_340uc")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DashIncreaseStrategy" format=3 uid="uid://bhf2ikcn02hec"]
+
+[ext_resource type="Script" uid="uid://bx8wvxx2ecmsp" path="res://V1/utility/strategies/dashstrategy.gd" id="1_2m8tc"]
+[ext_resource type="Texture2D" uid="uid://0v6d4w7008gq" path="res://V1/assets/dash buff.png" id="2_2m8tc"]
+
+[resource]
+script = ExtResource("1_2m8tc")
+texture = ExtResource("2_2m8tc")
+upgrade_text = "Dash Distance"
+metadata/_custom_type_script = "uid://bx8wvxx2ecmsp"

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://k8r71ejrvo58"]
+
+[ext_resource type="Script" uid="uid://b0wvjgd87edo1" path="res://V2/Components/AttackSystem/projectileAttacks/bullets/bullet_basic.gd" id="1_fdi65"]
+[ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://V2/icon.svg" id="1_v2yao"]
+[ext_resource type="PackedScene" uid="uid://7c6m4f4oxyhi" path="res://V2/Components/AttackSystem/particles-spawns/hitparticle.tscn" id="2_quvex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_um6w3"]
+radius = 24.083189
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1779336830]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_fdi65")
+impact_particles = ExtResource("2_quvex")
+damageenemies = true
+enemyinteraction = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1807455321]
+position = Vector2(-0.5, 0)
+scale = Vector2(0.3828125, 0.37499997)
+texture = ExtResource("1_v2yao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=757186318]
+shape = SubResource("CircleShape2D_um6w3")

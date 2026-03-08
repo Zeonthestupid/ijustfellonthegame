@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cdfm8gnnxa8gq"]
+
+[ext_resource type="Script" uid="uid://cgm3jgm60owll" path="res://V1/enemysystem/enemies/basic/test/man.gd" id="1_pfr4v"]
+[ext_resource type="Texture2D" uid="uid://cr4xkdk5xc7x6" path="res://V1/assets/enemy.png" id="2_x34kg"]
+[ext_resource type="PackedScene" uid="uid://dxo40sxjrv0ya" path="res://V1/health_component.tscn" id="3_rb5kw"]
+[ext_resource type="Script" uid="uid://dj63calvjyuxf" path="res://V1/enemysystem/enemies/basic/test/collision_shape_2d.gd" id="3_x34kg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfr4v"]
+size = Vector2(16.52751, 38)
+
+[node name="basic enemy" type="CharacterBody2D" unique_id=189267909]
+scale = Vector2(3.2672799, 0.60103023)
+collision_layer = 6
+collision_mask = 6
+safe_margin = 0.001
+script = ExtResource("1_pfr4v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=219419052]
+position = Vector2(2.1285381, 1.9802389)
+scale = Vector2(0.25534412, 1.3716223)
+texture = ExtResource("2_x34kg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1574905821]
+shape = SubResource("RectangleShape2D_pfr4v")
+script = ExtResource("3_x34kg")
+
+[node name="HealthComponent" parent="." unique_id=1210977906 instance=ExtResource("3_rb5kw")]
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

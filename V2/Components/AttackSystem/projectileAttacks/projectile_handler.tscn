@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://byfp3e3f24ymd"]
+
+[ext_resource type="Script" uid="uid://xy53krqskpem" path="res://V2/Components/AttackSystem/projectileAttacks/projectile_attack.gd" id="1_htkyy"]
+
+[node name="ProjectileHandler" type="Node2D" unique_id=188729144]
+script = ExtResource("1_htkyy")
+type = "patterned"
+damage = 3.0

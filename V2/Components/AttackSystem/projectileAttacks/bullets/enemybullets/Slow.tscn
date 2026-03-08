@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dtbm15fh1b6s3"]
+
+[ext_resource type="Script" uid="uid://utabct5kiy08" path="res://V2/Components/AttackSystem/projectileAttacks/bullets/enemybullets/slow.gd" id="1_l3vkj"]
+
+[sub_resource type="Gradient" id="Gradient_q1wtt"]
+offsets = PackedFloat32Array(0.056, 0.18, 0.496, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.9324315, 0.5945087, 0.8458281, 1, 0.43137255, 0.09411765, 0.37254903, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l3vkj"]
+gradient = SubResource("Gradient_q1wtt")
+fill = 1
+fill_from = Vector2(0.51445085, 0.49421966)
+fill_to = Vector2(0.1849711, 0.53757226)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_um6w3"]
+radius = 30.016663
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1779336830]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_l3vkj")
+SPEED = 500
+damageenemies = true
+enemyinteraction = true
+damage = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1807455321]
+position = Vector2(-2, 0)
+scale = Vector2(1.7929686, 1.8437501)
+texture = SubResource("GradientTexture2D_l3vkj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=757186318]
+shape = SubResource("CircleShape2D_um6w3")

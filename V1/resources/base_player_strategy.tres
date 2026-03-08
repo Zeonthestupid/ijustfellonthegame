@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BasePlayerUpgrade" format=3 uid="uid://bpgdeplva00rw"]
+
+[ext_resource type="Script" uid="uid://bf20noreaonn4" path="res://V1/utility/strategies/BasePlayerUpgrade.gd" id="1_1si82"]
+
+[resource]
+resource_name = "BasePlayerUpgrade"
+script = ExtResource("1_1si82")

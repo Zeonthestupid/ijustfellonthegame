@@ -1,0 +1,66 @@
+extends Node2D
+
+@export var weapons: Array[Weapon]
+
+@export var alwaysactive: Array[Weapon]
+var skey = ""
+var pkey = ""
+var spkey = ""
+var currentweapon = 0
+
+signal knockback(kb: float, tm: float) 
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
+	
+	add_to_group("weapon_handler")
+	init()
+
+func increase():
+	currentweapon = (currentweapon+1) % weapons.size()
+	init()
+func decrease():
+	currentweapon = (currentweapon-1) % weapons.size()
+	init()
+
+	
+func init():
+	pass
+
+func hideitems():
+	for i in range(weapons.size()):
+		weapons[i].hideheld()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+
+	
+	weapons[currentweapon].handle(delta)
+	
+	for i in range(alwaysactive.size()):
+		alwaysactive[i].handle(delta)
+	
+	if Input.is_action_just_pressed("w1"):
+		currentweapon = 0
+		init()
+	if Input.is_action_just_pressed("w2"):
+		currentweapon = min(1, weapons.size()-1)
+		init()
+	if Input.is_action_just_pressed("w3"):
+		currentweapon = min(2, weapons.size()-1)
+		init()
+	if Input.is_action_just_pressed("w4"):
+		currentweapon = min(3, weapons.size()-1)
+		init()
+	if Input.is_action_just_pressed("w5"):
+		currentweapon = min(4, weapons.size()-1)
+		init()
+	if Input.is_action_just_pressed("increase_weapon"):
+		increase()
+	if Input.is_action_just_pressed("decrease_weapon"):
+		decrease()
+		
+func sendknockback(kb, kbtime):
+	knockback.emit(kb, kbtime)

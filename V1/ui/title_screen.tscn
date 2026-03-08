@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cimijyfrdl8cb"]
+
+[ext_resource type="Script" uid="uid://ctclicv7kll80" path="res://V1/title_screen.gd" id="1_bor1v"]
+[ext_resource type="Texture2D" uid="uid://crhs6n4mn0gel" path="res://V1/assets/run start button.png" id="2_qer0c"]
+[ext_resource type="Texture2D" uid="uid://bn3eaj4scnm2v" path="res://V1/assets/quit button.png" id="3_qer0c"]
+[ext_resource type="AudioStream" uid="uid://bjc4c20xupte5" path="res://V1/assets/title theme.wav" id="4_dk6f0"]
+[ext_resource type="Texture2D" uid="uid://caj4x3v1bcpe5" path="res://V1/assets/title screen.png" id="5_l1ku3"]
+
+[node name="title screen" type="Control" unique_id=1408701267]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bor1v")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1073830328]
+visibility_layer = 17
+layout_mode = 0
+offset_left = 48.0
+offset_top = 124.0
+offset_right = 144.0
+offset_bottom = 188.0
+texture_normal = ExtResource("2_qer0c")
+texture_pressed = ExtResource("2_qer0c")
+texture_hover = ExtResource("2_qer0c")
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=893877916]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 172.0
+offset_right = 131.0
+offset_bottom = 236.0
+texture_normal = ExtResource("3_qer0c")
+texture_pressed = ExtResource("3_qer0c")
+texture_hover = ExtResource("3_qer0c")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TextureButton2" unique_id=151590187]
+stream = ExtResource("4_dk6f0")
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=73781452]
+z_index = -4
+position = Vector2(290.75, 172)
+scale = Vector2(0.5775, 0.47866663)
+texture = ExtResource("5_l1ku3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1867108988]
+position = Vector2(290, 161.00002)
+scale = Vector2(0.49799997, 0.43466666)
+zoom = Vector2(2, 2)
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_pressed"]

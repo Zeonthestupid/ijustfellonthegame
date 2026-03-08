@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://btpgdkil4vodg"]
+
+[ext_resource type="Script" uid="uid://8wrrr156t4rx" path="res://V1/character_body_2d.gd" id="1_c6b6t"]
+[ext_resource type="Texture2D" uid="uid://qgapywwanmw6" path="res://V1/assets/harhar.png" id="2_c7ivy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufgiq"]
+
+[node name="Node2D" type="Node2D" unique_id=534745184]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=394332129]
+script = ExtResource("1_c6b6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1537260960]
+shape = SubResource("CircleShape2D_ufgiq")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1162418083]
+position = Vector2(-1.9073486e-06, 0)
+scale = Vector2(0.01776316, 0.019512195)
+texture = ExtResource("2_c7ivy")
+
+[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D" unique_id=1211907878]

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://7c6m4f4oxyhi"]
+
+[ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://V2/icon.svg" id="1_jsa6s"]
+[ext_resource type="Script" uid="uid://duaaun3t0d1cv" path="res://V2/Components/AttackSystem/particles-spawns/hitparticle.gd" id="2_oh6xe"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oh6xe"]
+particle_flag_disable_z = true
+angle_min = -179.99998
+angle_max = 180.00002
+inherit_velocity_ratio = 0.664
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+gravity = Vector3(0, 98, 0)
+scale_min = 0.049999997
+scale_max = 0.099999994
+
+[node name="GPUParticles2D" type="GPUParticles2D" unique_id=1399172316]
+scale = Vector2(0.23586969, 1.36695)
+emitting = false
+amount = 15
+sub_emitter = NodePath(".")
+texture = ExtResource("1_jsa6s")
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_oh6xe")
+script = ExtResource("2_oh6xe")

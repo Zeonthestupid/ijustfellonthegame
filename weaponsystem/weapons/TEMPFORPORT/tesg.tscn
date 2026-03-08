@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://c72vneo4jocow"]
-
-[ext_resource type="PackedScene" uid="uid://c384rmiytyxwa" path="res://weaponsystem/weapons/harpoon_gun/harpoon_gun.tscn" id="1_2233v"]
-
-[node name="Tesg" type="Node2D" unique_id=680976470]
-
-[node name="HarpoonGun" parent="." unique_id=1783020617 instance=ExtResource("1_2233v")]

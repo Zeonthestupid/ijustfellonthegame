@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cupj283y8hjut"]
+
+[ext_resource type="Script" uid="uid://b4lq1mdu4qrw0" path="res://V1/enemysystem/enemies/basic/test2/man.gd" id="1_8jfvb"]
+[ext_resource type="Texture2D" uid="uid://byyx4w1pnj6a" path="res://V1/assets/DSC_1856.JPG" id="2_o3buh"]
+[ext_resource type="PackedScene" uid="uid://dxo40sxjrv0ya" path="res://V1/health_component.tscn" id="3_thbkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfr4v"]
+size = Vector2(48, 38)
+
+[node name="basic enemy" type="CharacterBody2D" unique_id=189267909]
+scale = Vector2(3.2672799, 0.60103023)
+collision_layer = 5
+collision_mask = 5
+safe_margin = 0.001
+script = ExtResource("1_8jfvb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=219419052]
+position = Vector2(0, -4.7683716e-07)
+scale = Vector2(0.008261472, 0.01195398)
+texture = ExtResource("2_o3buh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1574905821]
+shape = SubResource("RectangleShape2D_pfr4v")
+
+[node name="HealthComponent" parent="." unique_id=1210977906 instance=ExtResource("3_thbkg")]
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

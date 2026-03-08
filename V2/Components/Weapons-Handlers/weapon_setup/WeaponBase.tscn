@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dc4rqvn7mewv3"]
+
+[ext_resource type="Script" uid="uid://c6kg81vsg615c" path="res://V2/Components/Weapons-Handlers/weapon_setup/scripts/weapon_base.gd" id="1_qirfm"]
+
+[node name="WeaponBase" type="Node2D" unique_id=223748414]
+script = ExtResource("1_qirfm")

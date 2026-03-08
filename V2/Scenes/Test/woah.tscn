@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://csnw0dat8l5rt"]
+
+[ext_resource type="PackedScene" uid="uid://cgxo6lhr54gno" path="res://V2/Character/player.tscn" id="1_ysgie"]
+[ext_resource type="PackedScene" uid="uid://jt01f6tnp2to" path="res://V2/Components/Weapons-Handlers/weapon_setup/weaponshandler.tscn" id="2_ncm35"]
+[ext_resource type="PackedScene" uid="uid://byfp3e3f24ymd" path="res://V2/Components/AttackSystem/projectileAttacks/projectile_handler.tscn" id="2_ysgie"]
+[ext_resource type="PackedScene" uid="uid://dc4rqvn7mewv3" path="res://V2/Components/Weapons-Handlers/weapon_setup/WeaponBase.tscn" id="3_04505"]
+[ext_resource type="PackedScene" uid="uid://k8r71ejrvo58" path="res://V2/Components/AttackSystem/projectileAttacks/bullets/bulletBasic.tscn" id="3_q6wqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysgie"]
+size = Vector2(1522, 472)
+
+[node name="Woah" type="Node2D" unique_id=804049609]
+
+[node name="player" parent="." unique_id=637462645 groups=["player"] instance=ExtResource("1_ysgie")]
+
+[node name="WeaponsHandler" parent="player" unique_id=730166915 node_paths=PackedStringArray("weapons") instance=ExtResource("2_ncm35")]
+weapons = [NodePath("WeaponBase")]
+
+[node name="WeaponBase" parent="player/WeaponsHandler" unique_id=223748414 node_paths=PackedStringArray("p_attack", "s_attack") instance=ExtResource("3_04505")]
+weapon_name = "test"
+p_attack = NodePath("ProjectileHandler")
+s_attack = NodePath("ProjectileHandler2")
+s_cooldown = 2.0
+
+[node name="ProjectileHandler" parent="player/WeaponsHandler/WeaponBase" unique_id=188729144 node_paths=PackedStringArray("marker") instance=ExtResource("2_ysgie")]
+type = "one-shot"
+bullet = ExtResource("3_q6wqu")
+marker = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="player/WeaponsHandler/WeaponBase/ProjectileHandler" unique_id=1873309398]
+
+[node name="ProjectileHandler2" parent="player/WeaponsHandler/WeaponBase" unique_id=1018536376 node_paths=PackedStringArray("marker") instance=ExtResource("2_ysgie")]
+bullet = ExtResource("3_q6wqu")
+marker = NodePath("Marker2D")
+angles = Array[float]([0.0, 90.0, 180.0, 270.0])
+
+[node name="Marker2D" type="Marker2D" parent="player/WeaponsHandler/WeaponBase/ProjectileHandler2" unique_id=589599725]
+
+[node name="player2" parent="." unique_id=24944220 groups=["enemy"] instance=ExtResource("1_ysgie")]
+position = Vector2(195, -154)
+collision_layer = 4
+collision_mask = 4
+script = null
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1371990053]
+position = Vector2(-41, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1027224288]
+position = Vector2(531, -309)
+shape = SubResource("RectangleShape2D_ysgie")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1296862650]
+zoom = Vector2(0.435, 0.435)
