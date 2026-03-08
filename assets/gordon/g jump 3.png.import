@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y6qolf6hhj1r"
-path="res://.godot/imported/gun a.png-954c5d4c20b7d38647f5ab3a40075227.ctex"
+uid="uid://d361h61gv5smy"
+path="res://.godot/imported/g jump 3.png-75e99b4267f1eb8fb6a590c4e298de9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gun a.png"
-dest_files=["res://.godot/imported/gun a.png-954c5d4c20b7d38647f5ab3a40075227.ctex"]
+source_file="res://assets/gordon/g jump 3.png"
+dest_files=["res://.godot/imported/g jump 3.png-75e99b4267f1eb8fb6a590c4e298de9c.ctex"]
 
 [params]
 

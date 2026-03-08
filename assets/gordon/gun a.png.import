@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxoqfbojqvahe"
-path="res://.godot/imported/gordon freeman in the ocean.png-6fb2b560662bd29e5e1bd55897b0c6ee.ctex"
+uid="uid://y6qolf6hhj1r"
+path="res://.godot/imported/gun a.png-7cc48c114813d09160e59a1d8e7eb59f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gordon freeman in the ocean.png"
-dest_files=["res://.godot/imported/gordon freeman in the ocean.png-6fb2b560662bd29e5e1bd55897b0c6ee.ctex"]
+source_file="res://assets/gordon/gun a.png"
+dest_files=["res://.godot/imported/gun a.png-7cc48c114813d09160e59a1d8e7eb59f.ctex"]
 
 [params]
 

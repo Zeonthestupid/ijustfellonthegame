@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnyerj2a0kmfq"]
 
 [ext_resource type="Script" uid="uid://fwsjo4jcsxnj" path="res://weaponsystem/weapons/lightgun/lightgun.gd" id="1_7qf2l"]
-[ext_resource type="Texture2D" uid="uid://y6qolf6hhj1r" path="res://assets/gun a.png" id="2_h8cye"]
+[ext_resource type="Texture2D" uid="uid://y6qolf6hhj1r" path="res://assets/gordon/gun a.png" id="2_h8cye"]
 
 [node name="Lightgun" type="Node2D" unique_id=1783020617]
 script = ExtResource("1_7qf2l")

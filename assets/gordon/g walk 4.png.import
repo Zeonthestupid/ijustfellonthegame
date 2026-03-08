@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yard5mbvpynv"
-path="res://.godot/imported/gordan 8.png-8517fbec1a0f51d231cbe3550cae21d1.ctex"
+uid="uid://bcoc5yhv5rf3t"
+path="res://.godot/imported/g walk 4.png-9fa7f33777c5144ec5ac68b8ed2477b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gordan 8.png"
-dest_files=["res://.godot/imported/gordan 8.png-8517fbec1a0f51d231cbe3550cae21d1.ctex"]
+source_file="res://assets/gordon/g walk 4.png"
+dest_files=["res://.godot/imported/g walk 4.png-9fa7f33777c5144ec5ac68b8ed2477b2.ctex"]
 
 [params]
 

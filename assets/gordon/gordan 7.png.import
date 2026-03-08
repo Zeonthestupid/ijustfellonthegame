@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dide0n1qn407r"
-path="res://.godot/imported/gordan 4.png-7d42667ee573a44df38b4a3d4dd9f55a.ctex"
+uid="uid://b7fcd22ocxorh"
+path="res://.godot/imported/gordan 7.png-9523a375c27f57bc1f8cb72d9f9dfeb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gordan 4.png"
-dest_files=["res://.godot/imported/gordan 4.png-7d42667ee573a44df38b4a3d4dd9f55a.ctex"]
+source_file="res://assets/gordon/gordan 7.png"
+dest_files=["res://.godot/imported/gordan 7.png-9523a375c27f57bc1f8cb72d9f9dfeb1.ctex"]
 
 [params]
 

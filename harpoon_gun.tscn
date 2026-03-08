@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bap0qgxms4y21"]
 
 [ext_resource type="Script" path="res://harpoon_gun/newharpoon.gd" id="1_yvatc"]
-[ext_resource type="Texture2D" uid="uid://y6qolf6hhj1r" path="res://assets/gun a.png" id="2_dknjj"]
+[ext_resource type="Texture2D" uid="uid://y6qolf6hhj1r" path="res://assets/gordon/gun a.png" id="2_dknjj"]
 
 [node name="HarpoonGun" type="Node2D" unique_id=1783020617]
 script = ExtResource("1_yvatc")

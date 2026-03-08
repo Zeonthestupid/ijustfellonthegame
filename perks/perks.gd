@@ -35,11 +35,11 @@ func _process(delta: float) -> void:
 
 
 func on_body_entered(body: PhysicsBody2D):
-	if body is Player:
+	if body.get_parent() is Player:
 		######################################
 		# Strategy Relevant Code:
 		# This adds the upgrade to our player,
 		######################################
-		body.upgrades.append(player_strategy)
+		body.get_parent().upgrades.append(player_strategy)
 		
 		queue_free()
