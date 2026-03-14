@@ -41,6 +41,7 @@ var fastfalling = false
 var cutjump = false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 
@@ -108,6 +109,14 @@ func _physics_process(delta: float) -> void:
 	kb_timer += 1
 	move_and_slide()
 	
+
+func _on_sprite_2d_hooked(hooked_position: Variant) -> void:
+	var tween = get_tree().create_tween()
+	var dist = sqrt(pow(hooked_position.y - global_position.y, 2)+pow(hooked_position.x - global_position.x, 2))
+	dist = dist * 0.01
+	print(dist)
+	tween.tween_property(self, "position", hooked_position, 0.2*dist)
+
 
 func apply_knockback(direction: Vector2, strength: float, sustain: int, decay: int, player_lock: int):
 	knockback_velocity = direction.normalized() * strength

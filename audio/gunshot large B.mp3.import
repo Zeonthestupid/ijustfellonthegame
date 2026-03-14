@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcw1yia2t42d8"
+path="res://.godot/imported/gunshot large B.mp3-8239a450e616500de80ea7be0220995e.mp3str"
+
+[deps]
+
+source_file="res://audio/gunshot large B.mp3"
+dest_files=["res://.godot/imported/gunshot large B.mp3-8239a450e616500de80ea7be0220995e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
