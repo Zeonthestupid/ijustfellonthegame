@@ -40,6 +40,9 @@ var player_lock_frames = 0
 var fastfalling = false
 var cutjump = false
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+
 
 func _physics_process(delta: float) -> void:
 	# TEMP TEMP TEMP TODO 
@@ -65,6 +68,20 @@ func _physics_process(delta: float) -> void:
 	
 	# Movement
 	var direction := Input.get_axis("player_left", "player_right")
+	
+	if direction < 0:
+		animated_sprite_2d.flip_h = true
+	elif direction > 0:
+		animated_sprite_2d.flip_h = false
+	
+	if is_on_floor():
+		if direction == 0:
+			animated_sprite_2d.play("idle")
+		else:
+			animated_sprite_2d.play("walk")
+	else:
+		animated_sprite_2d.play("jump")
+	
 	
 	
 	if kb_timer >= player_lock_frames:

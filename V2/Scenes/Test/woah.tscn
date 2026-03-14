@@ -36,12 +36,6 @@ angles = Array[float]([0.0, 90.0, 180.0, 270.0])
 
 [node name="Marker2D" type="Marker2D" parent="player/WeaponsHandler/WeaponBase/ProjectileHandler2" unique_id=589599725]
 
-[node name="player2" parent="." unique_id=24944220 groups=["enemy"] instance=ExtResource("1_ysgie")]
-position = Vector2(195, -154)
-collision_layer = 4
-collision_mask = 4
-script = null
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1371990053]
 position = Vector2(-41, 640)
 
@@ -50,4 +44,4 @@ position = Vector2(531, -309)
 shape = SubResource("RectangleShape2D_ysgie")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1296862650]
-zoom = Vector2(0.435, 0.435)
+zoom = Vector2(1.2, 1.2)

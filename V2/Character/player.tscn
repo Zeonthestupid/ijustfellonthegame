@@ -3,20 +3,79 @@
 [ext_resource type="Script" uid="uid://pkralsu0brrs" path="res://V2/Character/player.gd" id="1_4tuht"]
 [ext_resource type="PackedScene" uid="uid://y4ch1b25tg7o" path="res://V2/Components/health_component.tscn" id="2_6ykjt"]
 [ext_resource type="Texture2D" uid="uid://caibvm7yiaare" path="res://V2/icon.svg" id="2_7mpc7"]
+[ext_resource type="Texture2D" uid="uid://uaioaoc1bhvc" path="res://gordon/godan idle.png" id="4_hpfsd"]
+[ext_resource type="Texture2D" uid="uid://cl82wwb6ko4yg" path="res://gordon/g jump 4.png" id="5_mor3d"]
+[ext_resource type="Texture2D" uid="uid://b25262t1t4udj" path="res://gordon/g jump 3.png" id="6_uaqei"]
+[ext_resource type="Texture2D" uid="uid://c8bfjuhabg1uc" path="res://gordon/g walk 1.png" id="7_n1ien"]
+[ext_resource type="Texture2D" uid="uid://co1ecruyibsim" path="res://gordon/g walk 2.png" id="8_hwecx"]
+[ext_resource type="Texture2D" uid="uid://dhrn1vb7fki25" path="res://gordon/g walk 3.png" id="9_xo7ss"]
+[ext_resource type="Texture2D" uid="uid://bqwa2hn7myoe1" path="res://gordon/g walk 4.png" id="10_cnii7"]
+[ext_resource type="Texture2D" uid="uid://dvctuu1alkncf" path="res://gordon/g walk 5.png" id="11_tkxeq"]
+[ext_resource type="Texture2D" uid="uid://dsgl2qkqs4i5s" path="res://gordon/g walk 6.png" id="12_d4vn6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjdfx"]
 radius = 9.0
 height = 50.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_f76ng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hpfsd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mor3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uaqei")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_n1ien")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hwecx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xo7ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cnii7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tkxeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d4vn6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
 [node name="player" type="CharacterBody2D" unique_id=637462645]
 script = ExtResource("1_4tuht")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=640407650]
+[node name="anan" type="Sprite2D" parent="." unique_id=640407650]
+visible = false
 texture = ExtResource("2_7mpc7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=869113532]
-visible = false
 shape = SubResource("CapsuleShape2D_cjdfx")
 debug_color = Color(0.66274303, 0.4217271, 0.7632646, 0.41960785)
 
 [node name="HealthComponent" parent="." unique_id=1927231805 instance=ExtResource("2_6ykjt")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1107712240]
+sprite_frames = SubResource("SpriteFrames_f76ng")
+animation = &"jump"
+frame_progress = 0.9042158
